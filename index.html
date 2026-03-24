@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sheldon Liu | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #09111f;
+        --panel: rgba(15, 23, 42, 0.74);
+        --text: #e8eefc;
+        --muted: #9aa8c2;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #7c3aed;
+        --accent-2: #22d3ee;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+        --radius: 24px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #08101d 0%, #0a1222 100%);
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        inset: -12%;
+        pointer-events: none;
+        z-index: -1;
+        will-change: transform, opacity;
+      }
+
+      body::before {
+        background:
+          radial-gradient(circle at 18% 16%, rgba(124, 58, 237, 0.2), transparent 24%),
+          radial-gradient(circle at 82% 10%, rgba(34, 211, 238, 0.12), transparent 20%),
+          radial-gradient(circle at 58% 78%, rgba(124, 58, 237, 0.1), transparent 22%);
+        animation: bgFloatOne 18s ease-in-out infinite alternate;
+      }
+
+      body::after {
+        background:
+          radial-gradient(circle at 72% 72%, rgba(34, 211, 238, 0.08), transparent 18%),
+          radial-gradient(circle at 30% 62%, rgba(124, 58, 237, 0.08), transparent 20%);
+        filter: blur(10px);
+        animation: bgFloatTwo 24s ease-in-out infinite alternate;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(8, 16, 29, 0.7);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav-inner {
+        min-height: 76px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        box-shadow: var(--shadow);
+      }
+
+      .brand span:last-child {
+        letter-spacing: 0.04em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        transition: 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.92rem 1.2rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--text);
+        transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      .btn-primary {
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      }
+
+      .hero {
+        padding: 5.3rem 0 2.4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(124, 58, 237, 0.14);
+        border: 1px solid rgba(124, 58, 237, 0.28);
+        color: #ddd6fe;
+        margin-bottom: 1rem;
+        font-size: 0.92rem;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 6vw, 5.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+      }
+
+      .gradient {
+        background: linear-gradient(135deg, #ffffff, #c4b5fd 52%, #67e8f9);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .section-head,
+      .project-card,
+      .info-card,
+      .contact-card,
+      .stat {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: fadeUp 0.7s ease forwards;
+      }
+
+      .hero-card { animation-delay: 0.12s; }
+      .section-head { animation-delay: 0.08s; }
+      .stat:nth-child(1) { animation-delay: 0.12s; }
+      .stat:nth-child(2) { animation-delay: 0.18s; }
+      .stat:nth-child(3) { animation-delay: 0.24s; }
+      .project-card:nth-child(1) { animation-delay: 0.08s; }
+      .project-card:nth-child(2) { animation-delay: 0.14s; }
+      .project-card:nth-child(3) { animation-delay: 0.2s; }
+      .project-card:nth-child(4) { animation-delay: 0.26s; }
+
+      .hero p {
+        margin-top: 1.2rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 64ch;
+        line-height: 1.75;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.8rem;
+        flex-wrap: wrap;
+      }
+
+      .stats {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .card,
+      .stat,
+      .project-card,
+      .info-card,
+      .contact-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+      }
+
+      .stat {
+        border-radius: 22px;
+        padding: 1rem;
+      }
+
+      .stat h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .stat p {
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.5;
+      }
+
+      .hero-card {
+        border-radius: 28px;
+        padding: 1.1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        inset: auto -40px -60px auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.35), transparent 65%);
+        pointer-events: none;
+        animation: pulseGlow 5s ease-in-out infinite;
+      }
+
+      .mockup {
+        min-height: 350px;
+        border-radius: 22px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+          #0f172a;
+        border: 1px solid rgba(255,255,255,0.08);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .window-bar {
+        display: flex;
+        gap: 0.45rem;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .panel {
+        flex: 1;
+        border-radius: 18px;
+        padding: 1.15rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        display: grid;
+        gap: 1rem;
+      }
+
+      .mini-heading {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .mini-main {
+        font-size: 1.42rem;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .snapshot-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+
+      .snapshot-card {
+        padding: 0.95rem;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+        transition: transform 0.22s ease, border-color 0.22s ease;
+      }
+
+      .snapshot-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255,255,255,0.14);
+      }
+
+      .snapshot-card strong {
+        display: block;
+        margin-bottom: 0.35rem;
+      }
+
+      .snapshot-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      section {
+        padding: 2.5rem 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.7rem, 4vw, 2.5rem);
+        margin-bottom: 0.35rem;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        max-width: 64ch;
+        line-height: 1.7;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .info-card,
+      .contact-card {
+        border-radius: var(--radius);
+        padding: 1.35rem;
+      }
+
+      .info-card h3,
+      .contact-card h3 {
+        margin-bottom: 0.45rem;
+      }
+
+      .info-card p,
+      .contact-card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .tag-list {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        padding: 0.65rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #d8e6ff;
+        font-size: 0.94rem;
+      }
+
+      .filters {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+      }
+
+      .filter-btn {
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+        color: var(--text);
+        cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .filter-btn:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255,255,255,0.14);
+      }
+
+      .filter-btn.active {
+        background: linear-gradient(135deg, rgba(124,58,237,0.28), rgba(34,211,238,0.18));
+        border-color: rgba(255,255,255,0.16);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        border-radius: 26px;
+        overflow: hidden;
+        transition: transform 0.22s ease, opacity 0.22s ease, border-color 0.22s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255,255,255,0.14);
+      }
+
+      .project-cover {
+        height: 180px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background:
+          linear-gradient(135deg, rgba(124,58,237,0.5), rgba(34,211,238,0.35)),
+          #131f36;
+      }
+
+      .project-type {
+        font-size: 0.84rem;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .project-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .project-body {
+        padding: 1.2rem;
+      }
+
+      .project-body h3 {
+        margin-bottom: 0.45rem;
+      }
+
+      .project-body p {
+        color: var(--muted);
+        line-height: 1.68;
+        min-height: 118px;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .project-links a {
+        color: #d7e6ff;
+        font-size: 0.95rem;
+      }
+
+      .contact-card {
+        display: block;
+        transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255,255,255,0.16);
+        background: rgba(18, 28, 52, 0.86);
+      }
+
+      footer {
+        padding: 2rem 0 4rem;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bgFloatOne {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+          opacity: 0.9;
+        }
+        50% {
+          transform: translate3d(1.5%, -1.2%, 0) scale(1.04);
+          opacity: 1;
+        }
+        100% {
+          transform: translate3d(-1.2%, 1.4%, 0) scale(1.02);
+          opacity: 0.88;
+        }
+      }
+
+      @keyframes bgFloatTwo {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translate3d(-1.4%, 1%, 0) scale(1.05);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translate3d(1.1%, -1.3%, 0) scale(1.03);
+          opacity: 0.72;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .projects-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav-inner {
+          padding: 1rem 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero {
+          padding-top: 3.5rem;
+        }
+
+        .snapshot-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#home">
+          <span class="brand-mark">S</span>
+          <span>SHELDON LIU</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/Sheldon715" target="_blank" rel="noreferrer" class="btn">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Ready for Job</div>
+            <h1>
+              Building <span class="gradient">polished web applications</span>
+              with clean UI and product-focused engineering.
+            </h1>
+            <p>
+              Software engineer with hands-on full-stack experience building responsive web applications with React, Next.js, Node.js, Express.js, PostgreSQL, and MongoDB. Experienced across REST APIs, authentication, database integration, third-party services, and deployment workflows.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="btn">LinkedIn</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <h3>Front-End</h3>
+                <p>React, Next.js, responsive UI, component-based architecture</p>
+              </div>
+              <div class="stat">
+                <h3>Back-End</h3>
+                <p>Node.js, Express.js, REST APIs, JWT, Google OAuth</p>
+              </div>
+              <div class="stat">
+                <h3>Data & Deploy</h3>
+                <p>PostgreSQL, MongoDB, Cloudinary, Vercel, AWS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card card">
+            <div class="mockup">
+              <div class="window-bar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="panel">
+                <div>
+                  <div class="mini-heading">Engineering snapshot</div>
+                  <div class="mini-main">Full-stack product work with cleaner UI, practical features, and deployment-ready structure.</div>
+                </div>
+
+                <div class="snapshot-grid">
+                  <div class="snapshot-card">
+                    <strong>Property Pulse</strong>
+                    <p>Listings, detail pages, media uploads, map integration, and protected user flows.</p>
+                  </div>
+                  <div class="snapshot-card">
+                    <strong>TaskFlow</strong>
+                    <p>CRUD operations, drag-and-drop ordering, filter views, and user-scoped task management.</p>
+                  </div>
+                  <div class="snapshot-card">
+                    <strong>Authentication</strong>
+                    <p>JWT, Google OAuth, protected routes, and session-aware workflows.</p>
+                  </div>
+                  <div class="snapshot-card">
+                    <strong>Deployment</strong>
+                    <p>Cloud databases, Vercel hosting, environment variables, and third-party services.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>About</h2>
+              <p>
+                The content here is aligned to real project work, stack usage, and implementation scope rather than generic portfolio filler.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="info-card">
+              <h3>Profile</h3>
+              <p>
+                I build production-style web applications with clean interfaces, structured data flows, and maintainable front-end and back-end integration. My work includes responsive user interfaces, API-driven features, authentication, database-backed functionality, cloud media handling, and deployment workflows.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Core Stack</h3>
+              <p>
+                JavaScript is my main working language, with project experience spanning React, Next.js, Node.js, Express.js, SQL and NoSQL databases, API design, and modern deployment tooling.
+              </p>
+              <div class="tag-list">
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Google OAuth</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Cloudinary</span>
+                <span class="tag">Git</span>
+                <span class="tag">Vercel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Projects</h2>
+              <p>
+                Projects are ordered to highlight the strongest production-style builds first, followed by supporting work and upcoming expansion.
+              </p>
+            </div>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="frontend">Front-End</button>
+            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card" data-category="fullstack frontend">
+              <div class="project-cover">
+                <span class="project-type">Full-Stack Real Estate Platform</span>
+                <div class="project-number">01</div>
+              </div>
+              <div class="project-body">
+                <h3>Property Pulse</h3>
+                <p>
+                  Developed a full-stack real estate web application with responsive property listing pages, detailed property views, protected user interactions, and database-backed workflows. Integrated NextAuth Google OAuth, Cloudinary media handling, and MapTiler/OpenCage services for location display and geocoding.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">React</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">NextAuth</span>
+                  <span class="tag">Cloudinary</span>
+                  <span class="tag">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
+                  <a href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="fullstack frontend">
+              <div class="project-cover">
+                <span class="project-type">Full-Stack Task Management App</span>
+                <div class="project-number">02</div>
+              </div>
+              <div class="project-body">
+                <h3>TaskFlow</h3>
+                <p>
+                  Engineered a task management web application with authenticated task workflows, REST APIs, per-user data handling, drag-and-drop reordering, filter-based views, and secure route protection. Deployed the application with Vercel and a cloud-hosted PostgreSQL/Neon database.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">React</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express.js</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">JWT</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
+                  <a href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="frontend">
+              <div class="project-cover">
+                <span class="project-type">Developer Portfolio</span>
+                <div class="project-number">03</div>
+              </div>
+              <div class="project-body">
+                <h3>Portfolio Website</h3>
+                <p>
+                  Built a developer portfolio focused on clean visual hierarchy, responsive layout, and recruiter-friendly presentation of projects, links, and technical scope. Designed to support future project additions without disrupting the page structure.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Responsive UI</span>
+                </div>
+                <div class="project-links">
+                  <a href="#home">Preview</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="upcoming fullstack">
+              <div class="project-cover">
+                <span class="project-type">Planned Commerce Build</span>
+                <div class="project-number">04</div>
+              </div>
+              <div class="project-body">
+                <h3>E-commerce Project</h3>
+                <p>
+                  Planned full-stack commerce project focused on catalog management, cart and checkout flows, authentication, validated forms, payment integration, and admin-facing product workflows. Current stack direction includes Next.js 15, TypeScript, PostgreSQL, Prisma, NextAuth, and Stripe/PayPal integration.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">Next.js 15</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Prisma</span>
+                  <span class="tag">NextAuth</span>
+                  <span class="tag">Stripe / PayPal</span>
+                </div>
+                <div class="project-links">
+                  <a href="#">Coming Soon</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Contact</h2>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-card" href="mailto:lxd040715@gmail.com">
+              <h3>Email</h3>
+              <p>Send a message</p>
+            </a>
+            <a class="contact-card" href="https://github.com/Sheldon715" target="_blank" rel="noreferrer">
+              <h3>GitHub</h3>
+              <p>View projects and code</p>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer">
+              <h3>LinkedIn</h3>
+              <p>Open profile</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 Sheldon Liu. Built as a single-file portfolio website.</p>
+      </div>
+    </footer>
+
+    <script>
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach((btn) => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filter = button.dataset.filter;
+
+          projectCards.forEach((card) => {
+            const categories = (card.dataset.category || '').split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
