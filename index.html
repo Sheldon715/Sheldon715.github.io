@@ -40,35 +40,59 @@
         overflow-x: hidden;
       }
 
-      body::before,
-      
-
-      
-
-      body::after {
-        width: 48vw;
-        height: 48vw;
-        right: -10vw;
-        top: 6vh;
-        background: radial-gradient(circle, rgba(34, 211, 238, 0.18) 0%, rgba(34, 211, 238, 0.08) 30%, transparent 70%);
-        filter: blur(24px);
-        animation: bgFloatTwo 16s ease-in-out infinite alternate;
+      .bg-animation {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
       }
 
-      body::before {
-        background:
-          radial-gradient(circle at 18% 16%, rgba(124, 58, 237, 0.2), transparent 24%),
-          radial-gradient(circle at 82% 10%, rgba(34, 211, 238, 0.12), transparent 20%),
-          radial-gradient(circle at 58% 78%, rgba(124, 58, 237, 0.1), transparent 22%);
-        animation: bgFloatOne 18s ease-in-out infinite alternate;
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(42px);
+        opacity: 0.55;
+        will-change: transform;
       }
 
-      body::after {
+      .orb-1 {
+        width: 42rem;
+        height: 42rem;
+        top: -10rem;
+        left: -8rem;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.34) 0%, rgba(124, 58, 237, 0.16) 36%, transparent 68%);
+        animation: driftOne 18s ease-in-out infinite alternate;
+      }
+
+      .orb-2 {
+        width: 34rem;
+        height: 34rem;
+        top: 8rem;
+        right: -10rem;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.28) 0%, rgba(34, 211, 238, 0.12) 38%, transparent 70%);
+        animation: driftTwo 22s ease-in-out infinite alternate;
+      }
+
+      .orb-3 {
+        width: 28rem;
+        height: 28rem;
+        left: 34%;
+        bottom: -10rem;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(124, 58, 237, 0.08) 40%, transparent 72%);
+        animation: driftThree 20s ease-in-out infinite alternate;
+      }
+
+      .grid-glow {
+        position: absolute;
+        inset: -20%;
         background:
-          radial-gradient(circle at 72% 72%, rgba(34, 211, 238, 0.08), transparent 18%),
-          radial-gradient(circle at 30% 62%, rgba(124, 58, 237, 0.08), transparent 20%);
-        filter: blur(10px);
-        animation: bgFloatTwo 24s ease-in-out infinite alternate;
+          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: radial-gradient(circle at center, rgba(255,255,255,0.55), transparent 78%);
+        opacity: 0.28;
+        animation: gridMove 26s linear infinite;
       }
 
       a {
@@ -747,33 +771,48 @@
         }
       }
 
-      @keyframes bgFloatOne {
+      @keyframes driftOne {
         0% {
           transform: translate3d(0, 0, 0) scale(1);
-          opacity: 0.72;
         }
         50% {
-          transform: translate3d(8vw, 3vh, 0) scale(1.08);
-          opacity: 0.95;
+          transform: translate3d(8vw, 6vh, 0) scale(1.08);
         }
         100% {
-          transform: translate3d(14vw, 8vh, 0) scale(1.14);
-          opacity: 0.78;
+          transform: translate3d(16vw, 12vh, 0) scale(1.14);
         }
       }
 
-      @keyframes bgFloatTwo {
+      @keyframes driftTwo {
         0% {
           transform: translate3d(0, 0, 0) scale(1);
-          opacity: 0.6;
         }
         50% {
-          transform: translate3d(-7vw, 6vh, 0) scale(1.1);
-          opacity: 0.86;
+          transform: translate3d(-10vw, 4vh, 0) scale(1.1);
         }
         100% {
-          transform: translate3d(-13vw, 12vh, 0) scale(1.16);
-          opacity: 0.68;
+          transform: translate3d(-16vw, 12vh, 0) scale(1.16);
+        }
+      }
+
+      @keyframes driftThree {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(-5vw, -6vh, 0) scale(1.06);
+        }
+        100% {
+          transform: translate3d(7vw, -10vh, 0) scale(1.12);
+        }
+      }
+
+      @keyframes gridMove {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-72px, -72px, 0);
         }
       }
 
@@ -817,6 +856,12 @@
     </style>
   </head>
   <body>
+    <div class="bg-animation" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+      <span class="grid-glow"></span>
+    </div>
     <header class="nav">
       <div class="container nav-inner">
         <a class="brand" href="#home">
