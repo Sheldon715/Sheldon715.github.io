@@ -38,14 +38,13 @@
         min-height: 100vh;
         position: relative;
         overflow-x: hidden;
-        isolation: isolate;
       }
 
       .bg-animation {
         position: fixed;
         inset: 0;
         pointer-events: none;
-        z-index: 0;
+        z-index: -1;
         overflow: hidden;
       }
 
@@ -53,7 +52,7 @@
         position: absolute;
         border-radius: 50%;
         filter: blur(42px);
-        opacity: 0.85;
+        opacity: 0.55;
         will-change: transform;
       }
 
@@ -62,8 +61,8 @@
         height: 42rem;
         top: -10rem;
         left: -8rem;
-        background: radial-gradient(circle, rgba(124, 58, 237, 0.46) 0%, rgba(124, 58, 237, 0.2) 36%, transparent 68%);
-        animation: driftOne 12s ease-in-out infinite alternate;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.34) 0%, rgba(124, 58, 237, 0.16) 36%, transparent 68%);
+        animation: driftOne 18s ease-in-out infinite alternate;
       }
 
       .orb-2 {
@@ -71,8 +70,8 @@
         height: 34rem;
         top: 8rem;
         right: -10rem;
-        background: radial-gradient(circle, rgba(34, 211, 238, 0.38) 0%, rgba(34, 211, 238, 0.16) 38%, transparent 70%);
-        animation: driftTwo 14s ease-in-out infinite alternate;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.28) 0%, rgba(34, 211, 238, 0.12) 38%, transparent 70%);
+        animation: driftTwo 22s ease-in-out infinite alternate;
       }
 
       .orb-3 {
@@ -80,20 +79,20 @@
         height: 28rem;
         left: 34%;
         bottom: -10rem;
-        background: radial-gradient(circle, rgba(124, 58, 237, 0.24) 0%, rgba(124, 58, 237, 0.1) 40%, transparent 72%);
-        animation: driftThree 13s ease-in-out infinite alternate;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(124, 58, 237, 0.08) 40%, transparent 72%);
+        animation: driftThree 20s ease-in-out infinite alternate;
       }
 
       .grid-glow {
         position: absolute;
         inset: -20%;
         background:
-          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
         background-size: 72px 72px;
         mask-image: radial-gradient(circle at center, rgba(255,255,255,0.55), transparent 78%);
-        opacity: 0.42;
-        animation: gridMove 12s linear infinite;
+        opacity: 0.28;
+        animation: gridMove 26s linear infinite;
       }
 
       a {
@@ -108,13 +107,6 @@
       .container {
         width: min(var(--max), calc(100% - 2rem));
         margin: 0 auto;
-      }
-
-      .nav,
-      main,
-      footer {
-        position: relative;
-        z-index: 1;
       }
 
       .nav {
@@ -456,7 +448,10 @@
       }
 
       .preview-banner {
-        padding: 1rem;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        min-height: 240px;
         background:
           linear-gradient(135deg, rgba(124,58,237,0.16), rgba(34,211,238,0.08)),
           rgba(255,255,255,0.04);
@@ -476,6 +471,19 @@
         margin-top: 0.8rem;
         font-size: 1.08rem;
         line-height: 1.3;
+      }
+
+      .preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        background: #0f172a;
+      }
+
+      .preview-overlay {
+        display: none;
       }
 
       .preview-banner p {
@@ -542,6 +550,16 @@
           linear-gradient(135deg, rgba(124,58,237,0.28), rgba(34,211,238,0.22)),
           #18233d;
         position: relative;
+        overflow: hidden;
+      }
+
+      .listing-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        background: #10192d;
       }
 
       .listing-thumb::after {
@@ -680,22 +698,87 @@
       .project-card {
         border-radius: 26px;
         overflow: hidden;
-        transition: transform 0.22s ease, opacity 0.22s ease, border-color 0.22s ease;
+        transition: transform 0.22s ease, opacity 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
       }
 
       .project-card:hover {
         transform: translateY(-6px);
         border-color: rgba(255,255,255,0.14);
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.36);
       }
 
       .project-cover {
-        height: 180px;
-        padding: 1rem;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        background:
+          linear-gradient(135deg, rgba(124,58,237,0.5), rgba(34,211,238,0.35)),
+          #131f36;
+        cursor: pointer;
+      }
+
+      .project-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        background: #10192d;
+        transition: transform 0.35s ease;
+      }
+
+      .project-cover:hover img {
+        transform: scale(1.06);
+      }
+
+      .project-cover-overlay {
+        position: absolute;
+        inset: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 1rem;
+        background: linear-gradient(180deg, rgba(9,17,31,0.16) 0%, rgba(9,17,31,0.72) 100%);
+        transition: background 0.25s ease;
+      }
+
+      .project-cover:hover .project-cover-overlay {
+        background: linear-gradient(180deg, rgba(9,17,31,0.08) 0%, rgba(9,17,31,0.78) 100%);
+      }
+
+      .project-cover-cta {
+        align-self: flex-start;
+        padding: 0.42rem 0.72rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(9,17,31,0.54);
+        color: #eef3ff;
+        font-size: 0.78rem;
+        line-height: 1;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+        backdrop-filter: blur(8px);
+      }
+
+      .project-cover:hover .project-cover-cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-cover-fallback {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        text-align: center;
+        color: rgba(232, 238, 252, 0.8);
+        font-size: 0.9rem;
+        line-height: 1.5;
         background:
-          linear-gradient(135deg, rgba(124,58,237,0.5), rgba(34,211,238,0.35)),
+          linear-gradient(135deg, rgba(124,58,237,0.2), rgba(34,211,238,0.12)),
           #131f36;
       }
 
@@ -784,10 +867,10 @@
           transform: translate3d(0, 0, 0) scale(1);
         }
         50% {
-          transform: translate3d(12vw, 8vh, 0) scale(1.12);
+          transform: translate3d(8vw, 6vh, 0) scale(1.08);
         }
         100% {
-          transform: translate3d(22vw, 16vh, 0) scale(1.2);
+          transform: translate3d(16vw, 12vh, 0) scale(1.14);
         }
       }
 
@@ -796,10 +879,10 @@
           transform: translate3d(0, 0, 0) scale(1);
         }
         50% {
-          transform: translate3d(-12vw, 6vh, 0) scale(1.14);
+          transform: translate3d(-10vw, 4vh, 0) scale(1.1);
         }
         100% {
-          transform: translate3d(-22vw, 14vh, 0) scale(1.22);
+          transform: translate3d(-16vw, 12vh, 0) scale(1.16);
         }
       }
 
@@ -808,10 +891,10 @@
           transform: translate3d(0, 0, 0) scale(1);
         }
         50% {
-          transform: translate3d(-8vw, -8vh, 0) scale(1.1);
+          transform: translate3d(-5vw, -6vh, 0) scale(1.06);
         }
         100% {
-          transform: translate3d(10vw, -14vh, 0) scale(1.18);
+          transform: translate3d(7vw, -10vh, 0) scale(1.12);
         }
       }
 
@@ -950,14 +1033,8 @@
 
                     <div class="hero-preview">
                       <div class="preview-banner">
-                        <span class="preview-label">Property Pulse</span>
-                        <h4>Property dashboard with cleaner listing and management flows.</h4>
-                        <p>Mockup preview for a product-style interface with search, listings, and admin actions.</p>
-                        <div class="preview-actions">
-                          <div class="preview-tab active"></div>
-                          <div class="preview-tab"></div>
-                          <div class="preview-tab"></div>
-                        </div>
+                        <img class="preview-image" src="property-pulse-home.png" alt="Property Pulse homepage preview" />
+                        
                       </div>
 
                       <div class="metrics-stack">
@@ -974,7 +1051,9 @@
 
                     <div class="listings-grid">
                       <div class="listing-card">
-                        <div class="listing-thumb"></div>
+                        <div class="listing-thumb">
+                          <img src="property-pulse-detail.png" alt="Property Pulse detail preview" />
+                        </div>
                         <div class="listing-info">
                           <div class="listing-title"></div>
                           <div class="listing-line"></div>
@@ -983,7 +1062,9 @@
                       </div>
 
                       <div class="listing-card">
-                        <div class="listing-thumb"></div>
+                        <div class="listing-thumb">
+                          <img src="property-pulse-auth.png" alt="Property Pulse authenticated preview" />
+                        </div>
                         <div class="listing-info">
                           <div class="listing-title"></div>
                           <div class="listing-line"></div>
@@ -1059,10 +1140,14 @@
 
           <div class="projects-grid">
             <article class="project-card" data-category="fullstack frontend">
-              <div class="project-cover">
-                <span class="project-type">Full-Stack Real Estate Platform</span>
-                <div class="project-number">01</div>
-              </div>
+              <a class="project-cover" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">
+                <img src="property-pulse-home.png" alt="Property Pulse project cover" />
+                <div class="project-cover-overlay">
+                  <span class="project-type">Full-Stack Real Estate Platform</span>
+                  <div class="project-number">01</div>
+                  <span class="project-cover-cta">Open Project</span>
+                </div>
+              </a>
               <div class="project-body">
                 <h3>Property Pulse</h3>
                 <p>
@@ -1084,10 +1169,14 @@
             </article>
 
             <article class="project-card" data-category="fullstack frontend">
-              <div class="project-cover">
-                <span class="project-type">Full-Stack Task Management App</span>
-                <div class="project-number">02</div>
-              </div>
+              <a class="project-cover" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow live demo">
+                <img src="taskflow-home.png" alt="TaskFlow project cover" />
+                <div class="project-cover-overlay">
+                  <span class="project-type">Full-Stack Task Management App</span>
+                  <div class="project-number">02</div>
+                  <span class="project-cover-cta">Open Project</span>
+                </div>
+              </a>
               <div class="project-body">
                 <h3>TaskFlow</h3>
                 <p>
@@ -1109,10 +1198,14 @@
             </article>
 
             <article class="project-card" data-category="frontend">
-              <div class="project-cover">
-                <span class="project-type">Developer Portfolio</span>
-                <div class="project-number">03</div>
-              </div>
+              <a class="project-cover" href="#home" aria-label="Open Portfolio Website preview">
+                <img src="portfolio-home.png" alt="Portfolio Website project cover" />
+                <div class="project-cover-overlay">
+                  <span class="project-type">Developer Portfolio</span>
+                  <div class="project-number">03</div>
+                  <span class="project-cover-cta">Open Project</span>
+                </div>
+              </a>
               <div class="project-body">
                 <h3>Portfolio Website</h3>
                 <p>
@@ -1131,10 +1224,14 @@
             </article>
 
             <article class="project-card" data-category="upcoming fullstack">
-              <div class="project-cover">
-                <span class="project-type">Planned Commerce Build</span>
-                <div class="project-number">04</div>
-              </div>
+              <a class="project-cover" href="#" aria-label="Open E-commerce project preview">
+                <img src="ecommerce-home.png" alt="E-commerce project cover" />
+                <div class="project-cover-overlay">
+                  <span class="project-type">Planned Commerce Build</span>
+                  <div class="project-number">04</div>
+                  <span class="project-cover-cta">Coming Soon</span>
+                </div>
+              </a>
               <div class="project-body">
                 <h3>E-commerce Project</h3>
                 <p>
