@@ -197,7 +197,8 @@ flowchart LR
 - refresh copy and project descriptions
 - keep screenshots current
 - add new projects as needed
-- split the page into components only if the site grows
+- edit source partials under `src/sections/`
+- run the static build script after source changes
 
 ---
 
@@ -223,10 +224,20 @@ flowchart LR
 /
   index.html
   README.md
+  package.json
+  scripts/
+    build-site.mjs
+  src/
+    layout.html
+    sections/
+    styles/
+    scripts/
   assets/
     images/
       *.png
       *.webp
+    css/
+    js/
   context/
   docs/
 ```

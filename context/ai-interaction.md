@@ -12,6 +12,7 @@
 ## Project Direction
 
 - The current site should stay static HTML/CSS/vanilla JavaScript for short-term improvements.
+- Edit source files under `src/`, then run the static build script to regenerate root `index.html` and assets.
 - Optimize the existing site before proposing a rebuild.
 - Astro is the preferred future option if the site grows into multiple pages, case studies, blog posts, markdown content, or reusable components.
 - Do not introduce Next.js, React, Prisma, databases, auth, or a backend unless the user explicitly asks for a new app direction.
@@ -55,8 +56,9 @@ Do not commit without permission. If verification fails, fix the issue before as
 
 ## Verification
 
-- Current project has no package scripts by default.
-- Do not assume `npm run lint`, `npm run test`, or `npm run build` exists.
+- Current project has a lightweight build script.
+- Use `node scripts/build-site.mjs` or `npm run build` after editing source files.
+- Do not assume `npm run lint` or `npm run test` exists.
 - For HTML/CSS/JS changes, verify with:
   - browser preview when practical
   - desktop and mobile viewport checks for visual changes
@@ -111,4 +113,3 @@ Review AI-generated code for:
 - If something is not working after 2-3 focused attempts, stop and explain the issue.
 - Do not keep trying random fixes.
 - Ask for clarification if requirements are unclear or if a change needs a real asset, live URL, or resume file that is not present.
-

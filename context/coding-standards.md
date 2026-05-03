@@ -3,9 +3,11 @@
 ## Current Stack
 
 - This project is currently a static personal portfolio site.
-- The main source file is `index.html`.
+- Source files live under `src/`.
+- The generated static entry file is `index.html`.
 - Use HTML, CSS, and vanilla JavaScript by default.
-- Do not introduce a framework, bundler, package manager, or build step unless a feature explicitly calls for it.
+- Do not introduce a framework or bundler unless a feature explicitly calls for it.
+- Use `node scripts/build-site.mjs` or `npm run build` to regenerate `index.html` and static assets after editing source files.
 - Astro is the preferred future rebuild option if the portfolio grows into multiple pages, case studies, markdown content, or reusable components.
 
 ## HTML
@@ -27,7 +29,7 @@
 
 ## CSS
 
-- Keep styling readable inside `index.html` while the project remains single-file.
+- Keep source styling in `src/styles/styles.css`.
 - Organize CSS by page area when editing larger sections.
 - Prefer CSS custom properties for shared colors, spacing, shadows, and radii.
 - Preserve the current dark-mode visual direction.
@@ -38,6 +40,7 @@
 
 ## JavaScript
 
+- Keep source JavaScript in `src/scripts/main.js`.
 - Use vanilla JavaScript only when behavior is needed.
 - Keep scripts small and focused.
 - Do not add dependencies for simple interactions.
@@ -76,8 +79,18 @@
 /
   index.html
   README.md
+  package.json
+  scripts/
+    build-site.mjs
+  src/
+    layout.html
+    sections/
+    styles/
+    scripts/
   assets/
     images/
+    css/
+    js/
   docs/
   context/
 ```
@@ -105,8 +118,9 @@
 
 ## Verification
 
-- For source changes, open the page locally or in browser preview when practical.
+- For source changes, run `node scripts/build-site.mjs` or `npm run build`.
+- Open the generated page locally or in browser preview when practical.
 - Check desktop and mobile widths for layout regressions.
 - Check keyboard navigation for interactive elements.
 - For SEO/performance features, review metadata, image paths, and Lighthouse-style concerns.
-- There is no `npm run lint` or `npm run build` in the current static project unless tooling is added later.
+- There is no lint/test toolchain yet.

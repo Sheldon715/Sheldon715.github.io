@@ -1,33 +1,26 @@
-# Current Feature: Portfolio Project Restructure
+# Current Feature
 
 ## Status
 
-Complete
+Not Started
 
 ## Goals
 
-- Move image assets out of the repository root
-- Keep `index.html` as the static site entry point
-- Update image paths after restructuring
-- Keep docs and context aligned with the new structure
+- No active feature selected
 
 ## Todo List
 
-- [x] Review current root files and image references
-- [x] Create an `assets/images/` folder
-- [x] Move portfolio screenshots into `assets/images/`
-- [x] Update `index.html` image paths
-- [x] Update context docs with the new structure
-- [x] Verify no stale root image references remain
+- [ ] Load the next feature spec from `context/feature/`
 
 ## Notes
 
 - This repo is a personal portfolio site, not a web app product.
-- This restructure should not introduce a framework, build step, or package manager.
-- Keep `index.html` as the app entry point.
+- Keep `index.html` as the static site entry point unless a feature explicitly changes the structure.
+- Current default stack is HTML, CSS, and vanilla JavaScript.
 
 ## History
 
-- Portfolio project restructure completed with screenshot assets moved into `assets/images/`, updated `index.html` image paths, and context docs aligned to the new structure
-- Context docs refreshed to match the current portfolio site
 - Portfolio site kept as a single-page static experience
+- Context docs refreshed to match the current portfolio site
+- Portfolio project restructure completed with screenshot assets moved into `assets/images/`, updated `index.html` image paths, and context docs aligned to the new structure
+- Portfolio Static Refactor Quick Wins completed with shared CSS utilities, filter ARIA state handling, image attributes, feature spec template, external CSS/JS, and build-time HTML section partials; static build/checks passed, manual browser layout and keyboard verification still pending
