@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sheldon Liu">
+  <rect width="64" height="64" rx="16" fill="#09111f"/>
+  <path fill="#7c3aed" d="M0 0h64v64H0z"/>
+  <path fill="#22d3ee" fill-opacity=".78" d="M16 0h48v64H0V48C0 21.49 16 0 16 0z"/>
+  <text x="32" y="41" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" text-anchor="middle">S</text>
+</svg>
