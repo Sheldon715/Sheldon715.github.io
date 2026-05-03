@@ -3,6 +3,7 @@
     <div class="section-head">
       <div>
         <h2>Projects</h2>
+        <p>Completed product builds with working demos, source code, and production-style engineering decisions.</p>
       </div>
     </div>
 
@@ -10,7 +11,6 @@
       <button class="filter-btn lift-soft active" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="filter-btn lift-soft" type="button" data-filter="frontend" aria-pressed="false">Front-End</button>
       <button class="filter-btn lift-soft" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
-      <button class="filter-btn lift-soft" type="button" data-filter="upcoming" aria-pressed="false">Upcoming</button>
     </div>
 
     <div class="projects-grid">
@@ -26,7 +26,7 @@
         <div class="project-body">
           <h3>DevStash</h3>
           <p>
-            Built a SaaS-style workspace for saving and reusing snippets, prompts, commands, notes, files, images, and links. The app combines a production-minded Prisma data model, Auth.js authentication, subscription-aware feature gates, R2 uploads, AI-assisted workflows, and a polished responsive dashboard.
+            Built a SaaS-style knowledge hub for developers to save and reuse snippets, prompts, commands, notes, files, images, and links. I implemented the Prisma/Neon data model, Auth.js flows, Stripe feature gates, R2 uploads, AI helpers, and a responsive dashboard with editor-focused workflows.
           </p>
           <div class="tag-list">
             <span class="tag">Next.js 16</span>
@@ -58,7 +58,7 @@
         <div class="project-body">
           <h3>Property Pulse</h3>
           <p>
-            Developed a full-stack real estate web application with responsive property listing pages, detailed property views, protected user interactions, and database-backed workflows. Integrated NextAuth Google OAuth, Cloudinary media handling, and MapTiler/OpenCage services for location display and geocoding.
+            Built a full-stack real estate app with listing search, detail pages, protected user actions, and database-backed property workflows. I integrated NextAuth Google OAuth, Cloudinary image handling, geocoding, and map services while keeping the UI responsive across browsing and management flows.
           </p>
           <div class="tag-list">
             <span class="tag">Next.js</span>
@@ -87,7 +87,7 @@
         <div class="project-body">
           <h3>TaskFlow</h3>
           <p>
-            Engineered a task management web application with authenticated task workflows, REST APIs, per-user data handling, drag-and-drop reordering, filter-based views, and secure route protection. Deployed the application with Vercel and a cloud-hosted PostgreSQL/Neon database.
+            Built a full-stack task manager with authenticated per-user task data, REST APIs, filtering, drag-and-drop reordering, and protected routes. I connected the React/Vite client to an Express API, PostgreSQL/Neon persistence, JWT auth, and a Vercel deployment.
           </p>
           <div class="tag-list">
             <span class="tag">React</span>
@@ -116,7 +116,7 @@
         <div class="project-body">
           <h3>Portfolio Website</h3>
           <p>
-            Built a developer portfolio focused on clean visual hierarchy, responsive layout, and recruiter-friendly presentation of projects, links, and technical scope. Designed to support future project additions without disrupting the page structure.
+            Built this static portfolio to present shipped projects, technical scope, and contact paths with fast-loading HTML, CSS, and vanilla JavaScript. I structured reusable section partials, responsive project cards, accessible filter controls, and generated static assets for GitHub Pages.
           </p>
           <div class="tag-list">
             <span class="tag">HTML</span>
@@ -130,33 +130,24 @@
         </div>
       </article>
 
-      <article class="project-card surface fade-in lift-strong" data-category="upcoming fullstack">
-        <a class="project-cover" href="#projects" aria-label="E-commerce project is coming soon">
-          <img src="assets/images/ecommerce-home.png" alt="E-commerce storefront concept with featured products and shopping layout" width="3072" height="1580" loading="lazy" decoding="async" />
-          <div class="project-cover-overlay">
-            <span class="project-type">Planned Commerce Build</span>
-            <div class="project-number">05</div>
-            <span class="project-cover-cta">Coming Soon</span>
-          </div>
-        </a>
-        <div class="project-body">
-          <h3>E-commerce Project</h3>
-          <p>
-            Planned full-stack commerce project focused on catalog management, cart and checkout flows, authentication, validated forms, payment integration, and admin-facing product workflows. Current stack direction includes Next.js 15, TypeScript, PostgreSQL, Prisma, NextAuth, and Stripe/PayPal integration.
-          </p>
-          <div class="tag-list">
-            <span class="tag">Next.js 15</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Prisma</span>
-            <span class="tag">NextAuth</span>
-            <span class="tag">Stripe / PayPal</span>
-          </div>
-          <div class="project-links">
-            <a href="#projects" aria-label="E-commerce project is coming soon">Coming Soon</a>
-          </div>
-        </div>
-      </article>
     </div>
+
+    <aside class="in-progress surface fade-in" aria-labelledby="in-progress-title">
+      <div>
+        <span class="preview-label">Currently building</span>
+        <h3 id="in-progress-title">E-commerce Platform</h3>
+        <p>
+          Planning a full-stack commerce app with catalog management, cart and checkout flows, authentication, validated forms, payments, and admin product workflows.
+        </p>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Prisma</span>
+        <span class="tag">Auth</span>
+        <span class="tag">Payments</span>
+      </div>
+    </aside>
   </div>
 </section>
