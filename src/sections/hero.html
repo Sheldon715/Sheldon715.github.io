@@ -60,7 +60,14 @@
 
               <div class="hero-preview">
                 <div class="preview-banner">
-                  <img class="preview-image" src="assets/images/property-pulse-home.png" alt="Property Pulse homepage with search filters and property cards" width="3043" height="1602" decoding="async" fetchpriority="high" />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="assets/images/property-pulse-home-640.webp 640w, assets/images/property-pulse-home-960.webp 960w, assets/images/property-pulse-home-1280.webp 1280w, assets/images/property-pulse-home-1920.webp 1920w"
+                      sizes="(max-width: 720px) calc(100vw - 4rem), (max-width: 980px) 58vw, 36vw"
+                    />
+                    <img class="preview-image" src="assets/images/property-pulse-home.png" alt="Property Pulse homepage with search filters and property cards" width="3043" height="1602" decoding="async" fetchpriority="high" />
+                  </picture>
                 </div>
 
                 <div class="metrics-stack">
@@ -78,7 +85,14 @@
               <div class="listings-grid">
                 <div class="listing-card">
                   <div class="listing-thumb">
-                    <img src="assets/images/property-pulse-detail.png" alt="Property Pulse property detail page with gallery and listing information" width="3039" height="1542" decoding="async" />
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/images/property-pulse-detail-640.webp 640w, assets/images/property-pulse-detail-960.webp 960w, assets/images/property-pulse-detail-1280.webp 1280w, assets/images/property-pulse-detail-1920.webp 1920w"
+                        sizes="(max-width: 720px) calc(100vw - 4rem), 16vw"
+                      />
+                      <img src="assets/images/property-pulse-detail.png" alt="Property Pulse property detail page with gallery and listing information" width="3039" height="1542" loading="lazy" decoding="async" />
+                    </picture>
                   </div>
                   <div class="listing-info">
                     <div class="listing-title"></div>
@@ -89,7 +103,14 @@
 
                 <div class="listing-card">
                   <div class="listing-thumb">
-                    <img src="assets/images/property-pulse-auth.png" alt="Property Pulse sign-in screen with Google authentication" width="3042" height="1610" decoding="async" />
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/images/property-pulse-auth-640.webp 640w, assets/images/property-pulse-auth-960.webp 960w, assets/images/property-pulse-auth-1280.webp 1280w, assets/images/property-pulse-auth-1920.webp 1920w"
+                        sizes="(max-width: 720px) calc(100vw - 4rem), 16vw"
+                      />
+                      <img src="assets/images/property-pulse-auth.png" alt="Property Pulse sign-in screen with Google authentication" width="3042" height="1610" loading="lazy" decoding="async" />
+                    </picture>
                   </div>
                   <div class="listing-info">
                     <div class="listing-title"></div>
