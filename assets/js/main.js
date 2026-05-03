@@ -23,3 +23,10 @@ filterButtons.forEach((button) => {
     filterProjects(filter);
   });
 });
+
+const initialActiveFilter = document.querySelector('.filter-btn.active') || filterButtons[0];
+
+if (initialActiveFilter) {
+  setActiveFilter(initialActiveFilter);
+  filterProjects(initialActiveFilter.dataset.filter || 'all');
+}

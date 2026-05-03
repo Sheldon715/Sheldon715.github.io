@@ -2,7 +2,9 @@
   --bg: #09111f;
   --panel: rgba(15, 23, 42, 0.74);
   --text: #e8eefc;
-  --muted: #9aa8c2;
+  --muted: #b1bfd7;
+  --focus: #f8fafc;
+  --focus-shadow: rgba(34, 211, 238, 0.36);
   --line: rgba(255, 255, 255, 0.08);
   --accent: #7c3aed;
   --accent-2: #22d3ee;
@@ -92,6 +94,12 @@ a {
 
 button {
   font: inherit;
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--focus-shadow);
 }
 
 .container {
@@ -719,7 +727,8 @@ section {
   transition: transform 0.35s ease;
 }
 
-.project-cover:hover img {
+.project-cover:hover img,
+.project-cover:focus-visible img {
   transform: scale(1.06);
 }
 
@@ -734,7 +743,8 @@ section {
   transition: background 0.25s ease;
 }
 
-.project-cover:hover .project-cover-overlay {
+.project-cover:hover .project-cover-overlay,
+.project-cover:focus-visible .project-cover-overlay {
   background: linear-gradient(180deg, rgba(9,17,31,0.08) 0%, rgba(9,17,31,0.78) 100%);
 }
 
@@ -753,7 +763,8 @@ section {
   backdrop-filter: blur(8px);
 }
 
-.project-cover:hover .project-cover-cta {
+.project-cover:hover .project-cover-cta,
+.project-cover:focus-visible .project-cover-cta {
   opacity: 1;
   transform: translateY(0);
 }
@@ -815,7 +826,8 @@ section {
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
 
-.contact-card:hover {
+.contact-card:hover,
+.contact-card:focus-visible {
   border-color: rgba(255,255,255,0.16);
   background: rgba(18, 28, 52, 0.86);
 }
@@ -894,6 +906,49 @@ footer {
   }
   100% {
     transform: translate3d(-72px, -72px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .orb,
+  .grid-glow,
+  .hero-card::after {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .section-head,
+  .fade-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .lift-soft:hover,
+  .lift-medium:hover,
+  .lift-strong:hover,
+  .btn:hover,
+  .project-cover:hover img,
+  .project-cover:focus-visible img {
+    transform: none;
+  }
+
+  .project-cover-cta {
+    opacity: 1;
+    transform: none;
   }
 }
 
