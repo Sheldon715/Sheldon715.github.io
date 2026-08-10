@@ -3,25 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sheldon Liu | Software Engineer</title>
-    <meta name="description" content="Sheldon Liu is a full-stack JavaScript developer building responsive React, Next.js, Node.js, Express, PostgreSQL, and MongoDB web applications." />
+    <title>Sheldon Liu | Full-Stack Software Engineer</title>
+    <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
     <meta name="author" content="Sheldon Liu" />
-    <meta name="theme-color" content="#09111f" />
+    <meta name="theme-color" content="#08101d" />
+    <script>
+      (() => {
+        const key = "portfolio-theme";
+        let theme = "dark";
+
+        try {
+          const saved = localStorage.getItem(key);
+          theme = saved === "light" || saved === "dark"
+            ? saved
+            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        } catch {
+          theme = "dark";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#fff9ed" : "#08101d";
+      })();
+    </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
-    <meta property="og:title" content="Sheldon Liu | Full-Stack JavaScript Developer" />
-    <meta property="og:description" content="Portfolio of full-stack JavaScript projects built with React, Next.js, Node.js, PostgreSQL, MongoDB, authentication, payments, uploads, and deployment workflows." />
+    <meta property="og:title" content="Sheldon Liu | Full-Stack Software Engineer" />
+    <meta property="og:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sheldon715.github.io/" />
-    <meta property="og:image" content="https://sheldon715.github.io/assets/images/portfolio-home.png" />
+    <meta property="og:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sheldon Liu, full-stack software engineer building AI-powered web and Android products" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sheldon Liu | Full-Stack JavaScript Developer" />
-    <meta name="twitter:description" content="Full-stack JavaScript portfolio featuring React, Next.js, Node.js, PostgreSQL, MongoDB, and product-ready web apps." />
-    <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/portfolio-home.png" />
+    <meta name="twitter:title" content="Sheldon Liu | Full-Stack Software Engineer" />
+    <meta name="twitter:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260810e" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -34,8 +56,17 @@
               "https://github.com/Sheldon715",
               "https://www.linkedin.com/in/sheldon-liu-b01bb3232/"
             ],
-            "jobTitle": "Full-Stack JavaScript Developer",
-            "knowsAbout": ["React", "Next.js", "Node.js", "Express.js", "PostgreSQL", "MongoDB"]
+            "jobTitle": "Full-Stack Software Engineer",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Melbourne",
+              "addressCountry": "AU"
+            },
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Melbourne"
+            },
+            "knowsAbout": ["React", "Next.js", "Kotlin", "Jetpack Compose", "Node.js", "PostgreSQL", "Qdrant", "Retrieval-Augmented Generation"]
           },
           {
             "@type": "WebSite",
@@ -54,7 +85,7 @@
     {{background}}
     {{header}}
 
-    <main>
+    <main id="main-content">
       {{hero}}
       {{projects}}
       {{about}}
@@ -62,6 +93,6 @@
     </main>
 
     {{footer}}
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20260810e" defer></script>
   </body>
 </html>

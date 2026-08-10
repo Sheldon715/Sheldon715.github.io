@@ -3,25 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sheldon Liu | Software Engineer</title>
-    <meta name="description" content="Sheldon Liu is a full-stack JavaScript developer building responsive React, Next.js, Node.js, Express, PostgreSQL, and MongoDB web applications." />
+    <title>Sheldon Liu | Full-Stack Software Engineer</title>
+    <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
     <meta name="author" content="Sheldon Liu" />
-    <meta name="theme-color" content="#09111f" />
+    <meta name="theme-color" content="#08101d" />
+    <script>
+      (() => {
+        const key = "portfolio-theme";
+        let theme = "dark";
+
+        try {
+          const saved = localStorage.getItem(key);
+          theme = saved === "light" || saved === "dark"
+            ? saved
+            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        } catch {
+          theme = "dark";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#fff9ed" : "#08101d";
+      })();
+    </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
-    <meta property="og:title" content="Sheldon Liu | Full-Stack JavaScript Developer" />
-    <meta property="og:description" content="Portfolio of full-stack JavaScript projects built with React, Next.js, Node.js, PostgreSQL, MongoDB, authentication, payments, uploads, and deployment workflows." />
+    <meta property="og:title" content="Sheldon Liu | Full-Stack Software Engineer" />
+    <meta property="og:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sheldon715.github.io/" />
-    <meta property="og:image" content="https://sheldon715.github.io/assets/images/portfolio-home.png" />
+    <meta property="og:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sheldon Liu, full-stack software engineer building AI-powered web and Android products" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sheldon Liu | Full-Stack JavaScript Developer" />
-    <meta name="twitter:description" content="Full-stack JavaScript portfolio featuring React, Next.js, Node.js, PostgreSQL, MongoDB, and product-ready web apps." />
-    <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/portfolio-home.png" />
+    <meta name="twitter:title" content="Sheldon Liu | Full-Stack Software Engineer" />
+    <meta name="twitter:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260810e" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -34,8 +56,17 @@
               "https://github.com/Sheldon715",
               "https://www.linkedin.com/in/sheldon-liu-b01bb3232/"
             ],
-            "jobTitle": "Full-Stack JavaScript Developer",
-            "knowsAbout": ["React", "Next.js", "Node.js", "Express.js", "PostgreSQL", "MongoDB"]
+            "jobTitle": "Full-Stack Software Engineer",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Melbourne",
+              "addressCountry": "AU"
+            },
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Melbourne"
+            },
+            "knowsAbout": ["React", "Next.js", "Kotlin", "Jetpack Compose", "Node.js", "PostgreSQL", "Qdrant", "Retrieval-Augmented Generation"]
           },
           {
             "@type": "WebSite",
@@ -57,53 +88,59 @@
   <span class="orb orb-3"></span>
   <span class="grid-glow"></span>
 </div>
-    <header class="nav">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#home">
-      <span class="brand-mark">S</span>
+    <a class="brand" href="#home" aria-label="Sheldon Liu, back to home">
+      <span class="brand-mark" aria-hidden="true">S</span>
       <span>SHELDON LIU</span>
     </a>
 
-    <nav class="nav-links">
-      <a href="#about">About</a>
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/Sheldon715" target="_blank" rel="noreferrer" class="btn">GitHub</a>
+      <a class="nav-about" href="#about">About</a>
+      <a class="nav-contact" href="#contact">Contact</a>
+      <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn nav-resume">Resume</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+        <span class="theme-toggle-label">Light</span>
+      </button>
     </nav>
   </div>
 </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero" id="home">
-  <div class="container hero-grid">
+  <div class="container">
     <div class="hero-copy fade-in">
-      <div class="eyebrow">Open to junior full-stack roles</div>
+      <div class="eyebrow">Melbourne, Australia · Open to software engineering opportunities</div>
       <h1>
-        Full-stack JavaScript developer building <span class="gradient">product-ready web apps</span>.
+        Full-stack software engineer building <span class="gradient">AI-powered web and Android products.</span>
       </h1>
       <p>
-        I build responsive applications with React, Next.js, TypeScript, Node.js, PostgreSQL, and MongoDB, with hands-on work across authentication, server actions, REST APIs, database design, file uploads, payments, testing, and deployment.
+        I design end-to-end systems across React, Next.js, Kotlin, Node.js, PostgreSQL, and RAG—turning product ideas into grounded, testable user experiences.
       </p>
 
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="btn">LinkedIn</a>
+        <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">View Resume</a>
+        <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="text-link">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
 
-      <div class="stats">
-        <div class="stat surface fade-in">
-          <h3>Front-End</h3>
-          <p>React, Next.js, TypeScript, responsive dashboards</p>
-        </div>
-        <div class="stat surface fade-in">
-          <h3>Back-End</h3>
-          <p>Server actions, REST APIs, Auth.js, JWT, validation</p>
-        </div>
-        <div class="stat surface fade-in">
-          <h3>Data & Deploy</h3>
-          <p>PostgreSQL, MongoDB, Prisma, Stripe, Vercel</p>
-        </div>
-      </div>
+      <ul class="strengths" aria-label="Engineering strengths">
+        <li class="strength surface fade-in">
+          <span>AI & RAG</span>
+          <strong>Qdrant retrieval, grounded product facts, LLM integration</strong>
+        </li>
+        <li class="strength surface fade-in">
+          <span>Full-Stack Web</span>
+          <strong>React, Next.js, Node.js, PostgreSQL, authentication</strong>
+        </li>
+        <li class="strength surface fade-in">
+          <span>Android</span>
+          <strong>Kotlin, Jetpack Compose, mobile-first product flows</strong>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -111,19 +148,64 @@
   <div class="container">
     <div class="section-head">
       <div>
+        <span class="section-kicker">Selected work</span>
         <h2>Projects</h2>
-        <p>Completed product builds with working demos, source code, and production-style engineering decisions.</p>
+        <p>End-to-end builds that show how I connect product thinking, interface work, backend systems, data, and AI.</p>
       </div>
     </div>
 
-    <div class="filters">
-      <button class="filter-btn lift-soft active" type="button" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn lift-soft" type="button" data-filter="frontend" aria-pressed="false">Front-End</button>
-      <button class="filter-btn lift-soft" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
-    </div>
-
     <div class="projects-grid">
-      <article class="project-card surface fade-in lift-strong" data-category="fullstack frontend">
+      <article class="project-card project-card--text project-card--wide surface fade-in">
+        <div class="project-feature-head">
+          <div>
+            <span class="preview-label">Featured AI + Android Project</span>
+            <p class="project-role">Full-Stack Lead Developer · 2026</p>
+          </div>
+          <span class="project-number" aria-hidden="true">01</span>
+        </div>
+
+        <div class="project-intro">
+          <div>
+            <h3>ShopMate</h3>
+            <p class="project-lede">
+              An Android-native conversational shopping assistant that turns natural-language needs into grounded product recommendations, comparisons, cart actions, and a simulated checkout flow.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View Source <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="project-proof-grid">
+          <div class="proof-point">
+            <span>Architecture</span>
+            <p>Kotlin and Jetpack Compose client, Node.js API, PostgreSQL facts, Qdrant retrieval, LLM integration, and SSE streaming.</p>
+          </div>
+          <div class="proof-point">
+            <span>Safety boundary</span>
+            <p>The LLM interprets intent while backend services validate product facts and cart mutations, failing closed on ambiguous targets.</p>
+          </div>
+          <div class="proof-point">
+            <span>Evaluation</span>
+            <p>A fixed 111-query offline retrieval baseline recorded recall@5 of 1.000 and MRR@10 of 0.989.</p>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <div class="tag-list">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Qdrant</span>
+            <span class="tag">RAG</span>
+            <span class="tag">SSE</span>
+          </div>
+          <p class="benchmark-note">Offline retrieval benchmark; not a production accuracy or latency claim.</p>
+        </div>
+      </article>
+
+      <article class="project-card project-card--split project-card--wide surface fade-in">
         <a class="project-cover" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">
           <picture>
             <source
@@ -134,35 +216,39 @@
             <img src="assets/images/devstash-homepage.png" alt="DevStash dashboard showing saved developer resources, workspace stats, and recent items" width="2518" height="1278" loading="lazy" decoding="async" />
           </picture>
           <div class="project-cover-overlay">
-            <span class="project-type">Full-Stack Developer Knowledge Hub</span>
-            <div class="project-number">01</div>
-            <span class="project-cover-cta">Open Project</span>
+            <div class="project-cover-top">
+              <span class="project-type">Full-Stack SaaS</span>
+              <span class="project-number" aria-hidden="true">02</span>
+            </div>
+            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
           </div>
         </a>
         <div class="project-body">
+          <p class="project-role">Independent Developer · 2026</p>
           <h3>DevStash</h3>
-          <p>
-            Built a SaaS-style knowledge hub for developers to save and reuse snippets, prompts, commands, notes, files, images, and links. I implemented the Prisma/Neon data model, Auth.js flows, Stripe feature gates, R2 uploads, AI helpers, and a responsive dashboard with editor-focused workflows.
+          <p class="project-lede">
+            A developer knowledge hub for saving, organising, and reusing snippets, prompts, commands, notes, files, images, and links.
           </p>
+          <ul class="project-highlights">
+            <li>Designed a unified Prisma and Neon PostgreSQL data model with Auth.js access flows and editor-focused resource workflows.</li>
+            <li>Integrated Stripe feature gates, Cloudflare R2 uploads, Upstash Redis controls, and AI-assisted tagging, summaries, and explanations.</li>
+          </ul>
           <div class="tag-list">
-            <span class="tag">Next.js 16</span>
-            <span class="tag">React 19</span>
+            <span class="tag">Next.js</span>
             <span class="tag">TypeScript</span>
-            <span class="tag">Prisma</span>
-            <span class="tag">Neon PostgreSQL</span>
+            <span class="tag">PostgreSQL</span>
             <span class="tag">Auth.js</span>
             <span class="tag">Stripe</span>
             <span class="tag">Cloudflare R2</span>
-            <span class="tag">AI</span>
           </div>
           <div class="project-links">
-            <a href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
-            <a href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">Live Product <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer" aria-label="View DevStash source code on GitHub">Source</a>
           </div>
         </div>
       </article>
 
-      <article class="project-card surface fade-in lift-strong" data-category="fullstack frontend">
+      <article class="project-card surface fade-in">
         <a class="project-cover" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">
           <picture>
             <source
@@ -173,33 +259,37 @@
             <img src="assets/images/property-pulse-home.png" alt="Property Pulse homepage showing real estate search and listing cards" width="3043" height="1602" loading="lazy" decoding="async" />
           </picture>
           <div class="project-cover-overlay">
-            <span class="project-type">Full-Stack Real Estate Platform</span>
-            <div class="project-number">02</div>
-            <span class="project-cover-cta">Open Project</span>
+            <div class="project-cover-top">
+              <span class="project-type">Real Estate Platform</span>
+              <span class="project-number" aria-hidden="true">03</span>
+            </div>
+            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
           </div>
         </a>
         <div class="project-body">
+          <p class="project-role">Full-Stack Developer · 2025</p>
           <h3>Property Pulse</h3>
-          <p>
-            Built a full-stack real estate app with listing search, detail pages, protected user actions, and database-backed property workflows. I integrated NextAuth Google OAuth, Cloudinary image handling, geocoding, and map services while keeping the UI responsive across browsing and management flows.
+          <p class="project-lede">
+            A responsive property listing platform covering discovery, search, property detail, and authenticated management flows.
           </p>
+          <ul class="project-highlights">
+            <li>Integrated Google OAuth, MongoDB-backed listings, Cloudinary media, geocoding, and MapTiler maps.</li>
+          </ul>
           <div class="tag-list">
             <span class="tag">Next.js</span>
-            <span class="tag">React</span>
             <span class="tag">MongoDB</span>
-            <span class="tag">NextAuth</span>
+            <span class="tag">OAuth</span>
             <span class="tag">Cloudinary</span>
-            <span class="tag">Tailwind CSS</span>
           </div>
           <div class="project-links">
-            <a href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
-            <a href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="project-link project-link--primary" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">Live Product <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer" aria-label="View Property Pulse source code on GitHub">Source</a>
           </div>
         </div>
       </article>
 
-      <article class="project-card surface fade-in lift-strong" data-category="fullstack frontend">
-        <a class="project-cover" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow live demo">
+      <article class="project-card surface fade-in">
+        <a class="project-cover" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">
           <picture>
             <source
               type="image/webp"
@@ -209,157 +299,118 @@
             <img src="assets/images/taskflow-home.png" alt="TaskFlow dashboard showing task columns and productivity controls" width="3071" height="1593" loading="lazy" decoding="async" />
           </picture>
           <div class="project-cover-overlay">
-            <span class="project-type">Full-Stack Task Management App</span>
-            <div class="project-number">03</div>
-            <span class="project-cover-cta">Open Project</span>
+            <div class="project-cover-top">
+              <span class="project-type">Task Management App</span>
+              <span class="project-number" aria-hidden="true">04</span>
+            </div>
+            <span class="project-cover-cta">Open authentication demo <span aria-hidden="true">↗</span></span>
           </div>
         </a>
         <div class="project-body">
+          <p class="project-role">Full-Stack Developer · 2025</p>
           <h3>TaskFlow</h3>
-          <p>
-            Built a full-stack task manager with authenticated per-user task data, REST APIs, filtering, drag-and-drop reordering, and protected routes. I connected the React/Vite client to an Express API, PostgreSQL/Neon persistence, JWT auth, and a Vercel deployment.
+          <p class="project-lede">
+            A task manager with per-user data, protected routes, filtering, and drag-and-drop prioritisation.
           </p>
+          <ul class="project-highlights">
+            <li>Connected a React and Vite client to an Express REST API, PostgreSQL persistence, JWT authentication, and Vercel deployment.</li>
+          </ul>
           <div class="tag-list">
             <span class="tag">React</span>
-            <span class="tag">Vite</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express.js</span>
+            <span class="tag">Express</span>
             <span class="tag">PostgreSQL</span>
             <span class="tag">JWT</span>
           </div>
           <div class="project-links">
-            <a href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
-            <a href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">Auth Demo <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer" aria-label="View TaskFlow source code on GitHub">Source</a>
           </div>
         </div>
       </article>
-
-      <article class="project-card surface fade-in lift-strong" data-category="frontend">
-        <a class="project-cover" href="https://github.com/Sheldon715/Sheldon715.github.io" target="_blank" rel="noreferrer" aria-label="Open Portfolio Website source code">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/portfolio-home-640.webp 640w, assets/images/portfolio-home-960.webp 960w, assets/images/portfolio-home-1280.webp 1280w, assets/images/portfolio-home-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/portfolio-home.png" alt="Portfolio homepage showing hero section and project preview card" width="3040" height="1590" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <span class="project-type">Developer Portfolio</span>
-            <div class="project-number">04</div>
-            <span class="project-cover-cta">View Source</span>
-          </div>
-        </a>
-        <div class="project-body">
-          <h3>Portfolio Website</h3>
-          <p>
-            Built this static portfolio to present shipped projects, technical scope, and contact paths with fast-loading HTML, CSS, and vanilla JavaScript. I structured reusable section partials, responsive project cards, accessible filter controls, and generated static assets for GitHub Pages.
-          </p>
-          <div class="tag-list">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Responsive UI</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Sheldon715/Sheldon715.github.io" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-        </div>
-      </article>
-
     </div>
-
-    <aside class="in-progress surface fade-in" aria-labelledby="in-progress-title">
-      <div>
-        <span class="preview-label">Currently building</span>
-        <h3 id="in-progress-title">E-commerce Platform</h3>
-        <p>
-          Planning a full-stack commerce app with catalog management, cart and checkout flows, authentication, validated forms, payments, and admin product workflows.
-        </p>
-      </div>
-      <div class="tag-list">
-        <span class="tag">Next.js</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Prisma</span>
-        <span class="tag">Auth</span>
-        <span class="tag">Payments</span>
-      </div>
-    </aside>
   </div>
 </section>
       <section id="about">
   <div class="container">
     <div class="section-head">
       <div>
+        <span class="section-kicker">Background</span>
         <h2>About</h2>
+        <p>A Melbourne-based computer science student who enjoys owning the full path from product problem to working software.</p>
       </div>
     </div>
 
     <div class="about-grid">
-      <div class="info-card surface fade-in">
-        <h3>Profile</h3>
+      <article class="info-card surface fade-in">
+        <span class="card-kicker">Profile</span>
+        <h3>Cross-platform, product-minded engineering</h3>
         <p>
-          I build production-style web applications with clean interfaces, structured data flows, and maintainable front-end and back-end integration. My work includes responsive user interfaces, API-driven features, authentication, database-backed functionality, cloud media handling, and deployment workflows.
+          I’m Sheldon Liu, completing a Bachelor of Science in Computer Science at the University of Melbourne. I build AI-driven web and Android applications, with hands-on work across interface design, backend APIs, data modelling, retrieval systems, testing, and deployment.
         </p>
-      </div>
+        <dl class="profile-facts">
+          <div>
+            <dt>Based in</dt>
+            <dd>Melbourne, Australia</dd>
+          </div>
+          <div>
+            <dt>Education</dt>
+            <dd>BSc Computer Science, University of Melbourne</dd>
+          </div>
+          <div>
+            <dt>Expected graduation</dt>
+            <dd>November 2026</dd>
+          </div>
+        </dl>
+      </article>
 
-      <div class="info-card surface fade-in">
-        <h3>Core Stack</h3>
+      <article class="info-card surface fade-in">
+        <span class="card-kicker">Engineering focus</span>
+        <h3>Grounded AI, clear boundaries</h3>
         <p>
-          JavaScript is my main working language, with project experience spanning React, Next.js, Node.js, Express.js, SQL and NoSQL databases, API design, and modern deployment tooling.
+          I’m especially interested in systems where LLMs work alongside reliable application data. My projects keep product facts and business mutations in controlled backend services while using AI for intent understanding, retrieval-assisted reasoning, and user-facing explanations.
         </p>
         <div class="tag-list">
-          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Kotlin</span>
+          <span class="tag">Python</span>
           <span class="tag">React</span>
           <span class="tag">Next.js</span>
           <span class="tag">Node.js</span>
-          <span class="tag">Express.js</span>
           <span class="tag">PostgreSQL</span>
-          <span class="tag">MongoDB</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">JWT</span>
-          <span class="tag">Google OAuth</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">Cloudinary</span>
-          <span class="tag">Git</span>
-          <span class="tag">Vercel</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">RAG & SSE</span>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
       <section id="contact">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Contact</h2>
+    <div class="contact-shell surface fade-in">
+      <div class="contact-copy">
+        <span class="section-kicker">Open to opportunities</span>
+        <h2>Let’s build useful software.</h2>
+        <p>
+          I’m currently exploring software engineering opportunities in Melbourne across full-stack web, AI-enabled products, and Android development.
+        </p>
       </div>
-    </div>
-
-    <div class="contact-grid">
-      <a class="contact-card surface fade-in lift-medium" href="mailto:lxd040715@gmail.com">
-        <h3>Email</h3>
-        <p>Send a message</p>
-      </a>
-      <a class="contact-card surface fade-in lift-medium" href="https://github.com/Sheldon715" target="_blank" rel="noreferrer">
-        <h3>GitHub</h3>
-        <p>View projects and code</p>
-      </a>
-      <a class="contact-card surface fade-in lift-medium" href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer">
-        <h3>LinkedIn</h3>
-        <p>Open profile</p>
-      </a>
+      <div class="contact-actions" aria-label="Contact links">
+        <a class="btn btn-primary" href="mailto:lxd040715@gmail.com">Start a conversation</a>
+        <a class="btn" href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/Sheldon715" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
     </div>
   </div>
 </section>
     </main>
 
     <footer>
-  <div class="container">
-    <p>&copy; 2026 Sheldon Liu. Built as a static portfolio website.</p>
+  <div class="container footer-inner">
+    <p>&copy; 2026 Sheldon Liu.</p>
+    <p>Built in Melbourne with HTML, CSS, and JavaScript.</p>
   </div>
 </footer>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20260810e" defer></script>
   </body>
 </html>

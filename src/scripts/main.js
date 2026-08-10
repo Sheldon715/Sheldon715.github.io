@@ -1,32 +1,62 @@
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+const THEME_KEY = "portfolio-theme";
+const themeToggle = document.querySelector(".theme-toggle");
+const themeToggleIcon = document.querySelector(".theme-toggle-icon");
+const themeToggleLabel = document.querySelector(".theme-toggle-label");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 
-function setActiveFilter(activeButton) {
-  filterButtons.forEach((button) => {
-    const isActive = button === activeButton;
-    button.classList.toggle('active', isActive);
-    button.setAttribute('aria-pressed', String(isActive));
-  });
-}
+const getStoredTheme = () => {
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    return saved === "light" || saved === "dark" ? saved : null;
+  } catch {
+    return null;
+  }
+};
 
-function filterProjects(filter) {
-  projectCards.forEach((card) => {
-    const categories = (card.dataset.category || '').split(' ');
-    card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
-  });
-}
+const applyTheme = (theme, persist = false) => {
+  const nextTheme = theme === "light" ? "light" : "dark";
+  const targetTheme = nextTheme === "dark" ? "light" : "dark";
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    setActiveFilter(button);
-    filterProjects(filter);
-  });
+  document.documentElement.dataset.theme = nextTheme;
+  document.documentElement.style.colorScheme = nextTheme;
+
+  if (themeColor) {
+    themeColor.content = nextTheme === "light" ? "#fff9ed" : "#08101d";
+  }
+
+  if (themeToggle) {
+    const action = `Switch to ${targetTheme} theme`;
+    themeToggle.setAttribute("aria-label", action);
+    themeToggle.title = action;
+  }
+
+  if (themeToggleIcon) {
+    themeToggleIcon.textContent = targetTheme === "light" ? "☀" : "☾";
+  }
+
+  if (themeToggleLabel) {
+    themeToggleLabel.textContent = targetTheme === "light" ? "Light" : "Dark";
+  }
+
+  if (persist) {
+    try {
+      localStorage.setItem(THEME_KEY, nextTheme);
+    } catch {
+      // The chosen theme still applies for this session if storage is unavailable.
+    }
+  }
+};
+
+applyTheme(document.documentElement.dataset.theme);
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  applyTheme(nextTheme, true);
 });
 
-const initialActiveFilter = document.querySelector('.filter-btn.active') || filterButtons[0];
-
-if (initialActiveFilter) {
-  setActiveFilter(initialActiveFilter);
-  filterProjects(initialActiveFilter.dataset.filter || 'all');
-}
+systemTheme.addEventListener?.("change", (event) => {
+  if (!getStoredTheme()) {
+    applyTheme(event.matches ? "light" : "dark");
+  }
+});
