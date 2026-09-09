@@ -10,6 +10,9 @@ const navShell = document.querySelector(".nav");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
 const scrollProgress = document.querySelector(".scroll-progress");
+const hero = document.querySelector(".hero");
+const shopmateSystem = document.querySelector(".shopmate-system");
+const workIndex = document.querySelector(".work-index");
 
 const translations = {
   zh: {
@@ -67,7 +70,7 @@ const applyTheme = (theme, persist = false) => {
   root.classList.add("is-theme-changing");
   root.dataset.theme = nextTheme;
   root.style.colorScheme = nextTheme;
-  if (themeColor) themeColor.content = nextTheme === "light" ? "#f3f4f1" : "#121310";
+  if (themeColor) themeColor.content = nextTheme === "light" ? "#ecedeb" : "#101214";
   updateThemeControl(nextTheme);
   window.setTimeout(() => root.classList.remove("is-theme-changing"), 260);
   if (persist) {
@@ -139,8 +142,18 @@ if ("IntersectionObserver" in window && !reducedMotion) {
     });
   }, { rootMargin: "0px 0px -10%", threshold: 0.1 });
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  if (shopmateSystem) {
+    const routeObserver = new IntersectionObserver((entries, observer) => {
+      if (!entries[0]?.isIntersecting) return;
+      shopmateSystem.classList.add("is-routing");
+      observer.disconnect();
+    }, { rootMargin: "0px 0px -18%", threshold: 0.35 });
+    routeObserver.observe(shopmateSystem);
+  }
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+  shopmateSystem?.classList.add("is-routing");
 }
 
 const setActiveLink = (links, href) => {
@@ -165,9 +178,31 @@ if ("IntersectionObserver" in window) {
   const workLinks = [...document.querySelectorAll(".work-index a")];
   const projectObserver = new IntersectionObserver((entries) => {
     const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActiveLink(workLinks, `#${visible.target.id}`);
+    if (visible) {
+      const href = `#${visible.target.id}`;
+      setActiveLink(workLinks, href);
+      const index = workLinks.findIndex((link) => link.getAttribute("href") === href);
+      if (workIndex && index >= 0) {
+        workIndex.style.setProperty("--work-progress", String(index / Math.max(1, workLinks.length - 1)));
+      }
+    }
   }, { rootMargin: "-20% 0px -55%", threshold: [0, 0.15, 0.4] });
   document.querySelectorAll(".project-chapter[id]").forEach((chapter) => projectObserver.observe(chapter));
+}
+
+if (hero && !reducedMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  hero.addEventListener("pointermove", (event) => {
+    const bounds = hero.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 7;
+    hero.style.setProperty("--hero-shift-x", `${x.toFixed(2)}px`);
+    hero.style.setProperty("--hero-shift-y", `${y.toFixed(2)}px`);
+  }, { passive: true });
+
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--hero-shift-x", "0px");
+    hero.style.setProperty("--hero-shift-y", "0px");
+  });
 }
 
 let scrollFrame = 0;
