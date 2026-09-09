@@ -1,55 +1,21 @@
-<section id="about">
-  <div class="container">
-    <div class="section-head">
+<section id="about" aria-labelledby="profile-title">
+  <div class="container profile-layout">
+    <div class="section-head reveal">
       <div>
-        <span class="section-kicker">Background</span>
-        <h2>About</h2>
-        <p>A Melbourne-based computer science student who enjoys owning the full path from product problem to working software.</p>
+        <span class="section-kicker" data-i18n="profile.kicker">02 / Profile</span>
+        <h2 id="profile-title" data-i18n-html="profile.title">Product thinking,<br />engineering depth.</h2>
       </div>
     </div>
 
-    <div class="about-grid">
-      <article class="info-card surface fade-in">
-        <span class="card-kicker">Profile</span>
-        <h3>Cross-platform, product-minded engineering</h3>
-        <p>
-          I’m Sheldon Liu, completing a Bachelor of Science in Computer Science at the University of Melbourne. I build AI-driven web and Android applications, with hands-on work across interface design, backend APIs, data modelling, retrieval systems, testing, and deployment.
-        </p>
-        <dl class="profile-facts">
-          <div>
-            <dt>Based in</dt>
-            <dd>Melbourne, Australia</dd>
-          </div>
-          <div>
-            <dt>Education</dt>
-            <dd>BSc Computer Science, University of Melbourne</dd>
-          </div>
-          <div>
-            <dt>Expected graduation</dt>
-            <dd>November 2026</dd>
-          </div>
-        </dl>
-      </article>
+    <div class="profile-story reveal">
+      <p class="profile-lede" data-i18n="profile.lede">I’m Sheldon Liu, a Computer Science student at the University of Melbourne. I like owning the full path from a product requirement to a working, testable release.</p>
+      <p data-i18n="profile.body">My work spans interface design, APIs, data modelling, retrieval, AI integration, testing, and deployment. I’m especially interested in grounded AI systems where language models help interpret and explain, while reliable application data controls facts and business actions.</p>
+    </div>
 
-      <article class="info-card surface fade-in">
-        <span class="card-kicker">Engineering focus</span>
-        <h3>Grounded AI, clear boundaries</h3>
-        <p>
-          I’m especially interested in systems where LLMs work alongside reliable application data. My projects keep product facts and business mutations in controlled backend services while using AI for intent understanding, retrieval-assisted reasoning, and user-facing explanations.
-        </p>
-        <div class="tag-list">
-          <span class="tag">TypeScript</span>
-          <span class="tag">Kotlin</span>
-          <span class="tag">Python</span>
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Qdrant</span>
-          <span class="tag">Jetpack Compose</span>
-          <span class="tag">RAG & SSE</span>
-        </div>
-      </article>
+    <div class="profile-themes">
+      <article class="profile-theme reveal"><span>01</span><h3 data-i18n="profile.theme1Title">Product to production</h3><p data-i18n="profile.theme1Body">Translate a real user need into an interface, service boundary, data model, test strategy, and deployed product.</p></article>
+      <article class="profile-theme reveal"><span>02</span><h3 data-i18n="profile.theme2Title">Grounded AI systems</h3><p data-i18n="profile.theme2Body">Use retrieval and controlled backend data to keep AI experiences useful, inspectable, and honest about their limits.</p></article>
+      <article class="profile-theme reveal"><span>03</span><h3 data-i18n="profile.theme3Title">Cross-platform engineering</h3><p data-i18n="profile.theme3Body">Work across web, Android, backend services, databases, and cloud delivery without losing the product thread.</p></article>
     </div>
   </div>
 </section>

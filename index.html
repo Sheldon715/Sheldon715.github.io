@@ -6,7 +6,7 @@
     <title>Sheldon Liu | Full-Stack Software Engineer</title>
     <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
     <meta name="author" content="Sheldon Liu" />
-    <meta name="theme-color" content="#0a101a" />
+    <meta name="theme-color" content="#121310" />
     <script>
       (() => {
         const key = "portfolio-theme";
@@ -24,7 +24,7 @@
         document.documentElement.classList.add("js");
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
-        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#f5f7fb" : "#0a101a";
+        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#f3f4f1" : "#121310";
       })();
     </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
@@ -92,11 +92,21 @@
       <span class="brand-name">Sheldon Liu</span>
     </a>
 
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#projects"><span aria-hidden="true">01</span> Work</a>
-      <a class="nav-about" href="#about"><span aria-hidden="true">02</span> Profile</a>
-      <a class="nav-contact" href="#contact"><span aria-hidden="true">03</span> Contact</a>
-      <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="nav-resume">Résumé</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+      <span data-i18n="nav.menu">Menu</span>
+    </button>
+
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+      <a href="#projects"><span aria-hidden="true">01</span> <span data-i18n="nav.work">Work</span></a>
+      <a href="#about"><span aria-hidden="true">02</span> <span data-i18n="nav.profile">Profile</span></a>
+      <a href="#education"><span aria-hidden="true">03</span> <span data-i18n="nav.education">Education</span></a>
+      <a href="#contact"><span aria-hidden="true">04</span> <span data-i18n="nav.contact">Contact</span></a>
+      <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="nav-resume" data-i18n="nav.resume">Résumé</a>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="zh" aria-pressed="false">中文</button>
+      </div>
       <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
         <span class="theme-toggle-dot" aria-hidden="true"></span>
         <span class="theme-toggle-label">Light</span>
@@ -110,322 +120,279 @@
   <div class="container hero-grid">
     <aside class="hero-index hero-reveal" aria-label="Portfolio context">
       <span class="index-code">SL / 2026</span>
-      <p>Software engineering portfolio</p>
+      <p data-i18n="hero.context">Software engineering portfolio</p>
       <dl>
         <div>
-          <dt>Base</dt>
-          <dd>Melbourne, AU</dd>
+          <dt data-i18n="hero.baseLabel">Base</dt>
+          <dd data-i18n="hero.base">Melbourne, AU</dd>
         </div>
         <div>
-          <dt>Study</dt>
-          <dd>University of Melbourne</dd>
+          <dt data-i18n="hero.studyLabel">Study</dt>
+          <dd data-i18n="hero.study">University of Melbourne</dd>
         </div>
         <div>
-          <dt>Graduating</dt>
-          <dd>November 2026</dd>
+          <dt data-i18n="hero.graduatingLabel">Graduating</dt>
+          <dd data-i18n="hero.graduating">November 2026</dd>
         </div>
       </dl>
     </aside>
 
     <div class="hero-copy">
-      <p class="hero-intro hero-reveal">Sheldon Liu — AI-enabled full-stack software engineer</p>
+      <p class="hero-intro hero-reveal" data-i18n="hero.intro">Sheldon Liu — AI-enabled full-stack software engineer</p>
       <h1 id="hero-title" aria-label="I build AI products from interface to infrastructure.">
-        <span class="hero-line"><span>I build AI products</span></span>
-        <span class="hero-line"><span>from interface</span></span>
-        <span class="hero-line"><span>to infrastructure.</span></span>
+        <span class="hero-line"><span data-i18n="hero.line1">I build AI products</span></span>
+        <span class="hero-line"><span data-i18n="hero.line2">from interface</span></span>
+        <span class="hero-line"><span data-i18n="hero.line3">to infrastructure.</span></span>
       </h1>
       <div class="hero-summary hero-reveal">
-        <p>I turn product ideas into reliable web and Android systems—connecting thoughtful interfaces, backend services, data, retrieval, and deployment.</p>
+        <div>
+          <p data-i18n="hero.summary">I turn product ideas into reliable web and Android systems—connecting thoughtful interfaces, backend services, data, retrieval, and deployment.</p>
+          <p class="availability"><span aria-hidden="true"></span><span data-i18n="hero.availability">Open to software engineering opportunities in Melbourne</span></p>
+        </div>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Explore the work</a>
-          <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">Read résumé</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.workAction">Explore the work</a>
+          <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn" data-i18n="hero.resumeAction">Read résumé</a>
+          <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="text-link">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
 
     <div class="product-path hero-reveal" aria-label="End-to-end product path">
-      <p>Product path</p>
+      <p data-i18n="hero.path">Product path</p>
       <ol>
-        <li><span>01</span>Brief</li>
-        <li><span>02</span>Interface</li>
-        <li><span>03</span>Service</li>
-        <li><span>04</span>Data + AI</li>
-        <li><span>05</span>Deploy</li>
+        <li><span>01</span><span data-i18n="hero.pathBrief">Brief</span></li>
+        <li><span>02</span><span data-i18n="hero.pathInterface">Interface</span></li>
+        <li><span>03</span><span data-i18n="hero.pathService">Service</span></li>
+        <li><span>04</span><span data-i18n="hero.pathData">Data + AI</span></li>
+        <li><span>05</span><span data-i18n="hero.pathDeploy">Deploy</span></li>
       </ol>
     </div>
   </div>
 </section>
-      <section id="projects">
+      <section id="projects" aria-labelledby="work-title">
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="section-kicker">01 / Selected work</span>
-        <h2>Built as systems,<br />not just screens.</h2>
-        <p>Each project is a record of the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and deployment.</p>
+        <span class="section-kicker" data-i18n="work.kicker">01 / Selected work</span>
+        <h2 id="work-title" data-i18n-html="work.title">Built as systems,<br />not just screens.</h2>
+        <p data-i18n="work.intro">Each project records the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and delivery.</p>
       </div>
     </div>
 
-    <div class="projects-grid">
-      <article class="project-card project-card--text project-card--wide surface reveal" aria-labelledby="shopmate-title">
-        <header class="project-feature-head">
-          <div>
-            <span class="preview-label">Primary build / AI + Android</span>
-            <p class="project-role">Full-Stack Lead Developer — 2026</p>
-          </div>
-          <span class="project-number" aria-hidden="true">01</span>
-        </header>
+    <div class="work-layout">
+      <aside class="work-index reveal" aria-label="Project index">
+        <p data-i18n="work.index">Build index</p>
+        <ol>
+          <li><a href="#shopmate"><span>01</span>ShopMate</a></li>
+          <li><a href="#devstash"><span>02</span>DevStash</a></li>
+          <li><a href="#propertypulse"><span>03</span>PropertyPulse</a></li>
+          <li><a href="#taskflow"><span>04</span>TaskFlow</a></li>
+        </ol>
+      </aside>
 
-        <div class="project-intro">
-          <div>
-            <h3 id="shopmate-title">ShopMate</h3>
-            <p class="project-lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View source <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-
-        <div class="shopmate-system" aria-label="ShopMate system architecture">
-          <div class="system-label">
-            <span>System route</span>
-            <p>Intent enters through the app; facts and mutations stay inside controlled services.</p>
-          </div>
-          <ol>
-            <li><span>Client</span><strong>Kotlin + Compose</strong></li>
-            <li><span>API</span><strong>Node + TypeScript</strong></li>
-            <li><span>Facts</span><strong>PostgreSQL</strong></li>
-            <li><span>Retrieval</span><strong>Qdrant + RAG</strong></li>
-            <li><span>Response</span><strong>LLM + SSE</strong></li>
-          </ol>
-        </div>
-
-        <div class="project-proof-grid">
-          <div class="proof-point proof-point--wide">
-            <span>Product boundary</span>
-            <p>The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>&lt;1s</strong>
-            <span>First streamed token after resume</span>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>1.000</strong>
-            <span>Recall@5 on a fixed 111-query baseline</span>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>0.989</strong>
-            <span>MRR@10 on the same offline set</span>
-          </div>
-        </div>
-
-        <footer class="project-footer">
-          <div class="tag-list" aria-label="ShopMate technology stack">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Qdrant</span>
-            <span class="tag">RAG</span>
-            <span class="tag">SSE</span>
-          </div>
-          <p class="benchmark-note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
-        </footer>
-      </article>
-
-      <article class="project-card project-card--split project-card--wide surface fade-in">
-        <a class="project-cover" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/devstash-homepage-640.webp 640w, assets/images/devstash-homepage-960.webp 960w, assets/images/devstash-homepage-1280.webp 1280w, assets/images/devstash-homepage-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/devstash-homepage.png" alt="DevStash dashboard showing saved developer resources, workspace stats, and recent items" width="2518" height="1278" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Full-Stack SaaS</span>
-              <span class="project-number" aria-hidden="true">02</span>
+      <div class="project-chapters">
+        <article class="project-chapter project-chapter--primary reveal" id="shopmate" aria-labelledby="shopmate-title">
+          <header class="chapter-head">
+            <div>
+              <span class="chapter-type" data-i18n="shopmate.type">Primary build / AI + Android</span>
+              <p class="project-role" data-i18n="shopmate.role">Full-Stack Lead Developer — 2026</p>
             </div>
-            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
-          </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Independent Developer · 2026</p>
-          <h3>DevStash</h3>
-          <p class="project-lede">
-            A developer knowledge hub for saving, organising, and reusing snippets, prompts, commands, notes, files, images, and links.
-          </p>
-          <ul class="project-highlights">
-            <li>Designed a unified Prisma and Neon PostgreSQL data model with Auth.js access flows and editor-focused resource workflows.</li>
-            <li>Integrated Stripe feature gates, Cloudflare R2 uploads, Upstash Redis controls, and AI-assisted tagging, summaries, and explanations.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Auth.js</span>
-            <span class="tag">Stripe</span>
-            <span class="tag">Cloudflare R2</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">Live Product <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer" aria-label="View DevStash source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+            <span class="project-number" aria-hidden="true">01</span>
+          </header>
 
-      <article class="project-card surface fade-in">
-        <a class="project-cover" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/property-pulse-home-640.webp 640w, assets/images/property-pulse-home-960.webp 960w, assets/images/property-pulse-home-1280.webp 1280w, assets/images/property-pulse-home-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/property-pulse-home.png" alt="Property Pulse homepage showing real estate search and listing cards" width="3043" height="1602" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Real Estate Platform</span>
+          <div class="chapter-intro">
+            <div>
+              <h3 id="shopmate-title">ShopMate</h3>
+              <p class="project-lede" data-i18n="shopmate.lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
+            </div>
+            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" data-i18n="actions.source">View source</a>
+          </div>
+
+          <div class="shopmate-system" aria-label="ShopMate system architecture">
+            <div class="system-label">
+              <span data-i18n="shopmate.routeLabel">System route</span>
+              <p data-i18n="shopmate.routeCopy">Intent enters through the app; facts and mutations stay inside controlled services.</p>
+            </div>
+            <ol>
+              <li><span data-i18n="shopmate.client">Client</span><strong>Kotlin + Compose</strong></li>
+              <li><span>API</span><strong>Node + TypeScript</strong></li>
+              <li><span data-i18n="shopmate.facts">Facts</span><strong>PostgreSQL</strong></li>
+              <li><span data-i18n="shopmate.retrieval">Retrieval</span><strong>Qdrant + RAG</strong></li>
+              <li><span data-i18n="shopmate.response">Response</span><strong>LLM + SSE</strong></li>
+            </ol>
+          </div>
+
+          <div class="evidence-grid">
+            <div class="evidence-copy">
+              <span data-i18n="shopmate.boundaryLabel">Product boundary</span>
+              <p data-i18n="shopmate.boundary">The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
+            </div>
+            <dl class="metric-list">
+              <div><dt>&lt;1s</dt><dd data-i18n="shopmate.metric1">First streamed token after resume</dd></div>
+              <div><dt>1.000</dt><dd data-i18n="shopmate.metric2">Recall@5 on a fixed 111-query baseline</dd></div>
+              <div><dt>0.989</dt><dd data-i18n="shopmate.metric3">MRR@10 on the same offline set</dd></div>
+            </dl>
+          </div>
+
+          <footer class="chapter-footer">
+            <div class="tag-list" aria-label="ShopMate technology stack">
+              <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Qdrant</span><span class="tag">RAG</span><span class="tag">SSE</span><span class="tag">Render</span>
+            </div>
+            <p class="benchmark-note" data-i18n="shopmate.note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
+          </footer>
+        </article>
+
+        <article class="project-chapter project-chapter--visual reveal" id="devstash" aria-labelledby="devstash-title">
+          <header class="chapter-head">
+            <div>
+              <span class="chapter-type" data-i18n="devstash.type">Featured build / Developer SaaS</span>
+              <p class="project-role" data-i18n="devstash.role">Independent Developer — 2026</p>
+            </div>
+            <span class="project-number" aria-hidden="true">02</span>
+          </header>
+
+          <a class="chapter-image" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live product">
+            <picture>
+              <source type="image/webp" srcset="assets/images/devstash-homepage-640.webp 640w, assets/images/devstash-homepage-960.webp 960w, assets/images/devstash-homepage-1280.webp 1280w, assets/images/devstash-homepage-1920.webp 1920w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1280px) calc(100vw - 10rem), 1040px" />
+              <img src="assets/images/devstash-homepage.png" alt="DevStash dashboard showing saved developer resources, workspace stats, and recent items" width="2518" height="1278" loading="lazy" decoding="async" />
+            </picture>
+            <span class="image-action" data-i18n="actions.live">Open live product</span>
+          </a>
+
+          <div class="chapter-copy-grid">
+            <div>
+              <h3 id="devstash-title">DevStash</h3>
+              <p class="project-lede" data-i18n="devstash.lede">A developer knowledge workspace for saving, organising, and reusing snippets, prompts, commands, notes, files, images, and links.</p>
+            </div>
+            <div class="decision-list">
+              <p data-i18n="devstash.decision1">Designed a unified Prisma and Neon PostgreSQL model around fast capture, retrieval, and editor-focused resource workflows.</p>
+              <p data-i18n="devstash.decision2">Connected Auth.js and RBAC with Stripe feature gates, Cloudflare R2 uploads, and Upstash Redis controls.</p>
+              <p data-i18n="devstash.decision3">Added AI-assisted tagging, summaries, and code explanations, then delivered the product through Vitest, CI/CD, and Vercel.</p>
+            </div>
+          </div>
+
+          <footer class="chapter-footer">
+            <div class="tag-list"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
+            <div class="project-actions">
+              <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.live">Live product</a>
+              <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a>
+            </div>
+          </footer>
+        </article>
+
+        <article class="project-chapter project-chapter--split reveal" id="propertypulse" aria-labelledby="property-title">
+          <div class="chapter-split-media">
+            <a class="chapter-image" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open PropertyPulse live product">
+              <picture>
+                <source type="image/webp" srcset="assets/images/property-pulse-home-640.webp 640w, assets/images/property-pulse-home-960.webp 960w, assets/images/property-pulse-home-1280.webp 1280w, assets/images/property-pulse-home-1920.webp 1920w" sizes="(max-width: 960px) calc(100vw - 2rem), 540px" />
+                <img src="assets/images/property-pulse-home.png" alt="PropertyPulse homepage showing real estate search and listing cards" width="3043" height="1602" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+          </div>
+          <div class="chapter-split-copy">
+            <header class="chapter-head">
+              <div><span class="chapter-type" data-i18n="property.type">Product build / Real estate</span><p class="project-role" data-i18n="property.role">Full-Stack Developer — 2025</p></div>
               <span class="project-number" aria-hidden="true">03</span>
-            </div>
-            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
+            </header>
+            <h3 id="property-title">PropertyPulse</h3>
+            <p class="project-lede" data-i18n="property.lede">A responsive property platform spanning discovery, search, property detail, and authenticated management flows.</p>
+            <div class="decision-list"><p data-i18n="property.decision">Integrated Google OAuth, MongoDB-backed listings, Cloudinary media, geocoding, and MapTiler maps into one end-to-end workflow.</p></div>
+            <div class="tag-list"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">MongoDB</span><span class="tag">OAuth</span><span class="tag">Cloudinary</span><span class="tag">MapTiler</span></div>
+            <div class="project-actions"><a class="project-link project-link--primary" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.live">Live product</a><a class="project-link" href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a></div>
           </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Full-Stack Developer · 2025</p>
-          <h3>Property Pulse</h3>
-          <p class="project-lede">
-            A responsive property listing platform covering discovery, search, property detail, and authenticated management flows.
-          </p>
-          <ul class="project-highlights">
-            <li>Integrated Google OAuth, MongoDB-backed listings, Cloudinary media, geocoding, and MapTiler maps.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">Next.js</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">OAuth</span>
-            <span class="tag">Cloudinary</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">Live Product <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer" aria-label="View Property Pulse source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project-card surface fade-in">
-        <a class="project-cover" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/taskflow-home-640.webp 640w, assets/images/taskflow-home-960.webp 960w, assets/images/taskflow-home-1280.webp 1280w, assets/images/taskflow-home-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/taskflow-home.png" alt="TaskFlow dashboard showing task columns and productivity controls" width="3071" height="1593" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Task Management App</span>
-              <span class="project-number" aria-hidden="true">04</span>
-            </div>
-            <span class="project-cover-cta">Open authentication demo <span aria-hidden="true">↗</span></span>
+        <article class="project-chapter project-chapter--compact reveal" id="taskflow" aria-labelledby="taskflow-title">
+          <header class="chapter-head">
+            <div><span class="chapter-type" data-i18n="taskflow.type">Other work / Task management</span><p class="project-role" data-i18n="taskflow.role">Full-Stack Developer — 2025</p></div>
+            <span class="project-number" aria-hidden="true">04</span>
+          </header>
+          <div class="compact-project-grid">
+            <div><h3 id="taskflow-title">TaskFlow</h3><p class="project-lede" data-i18n="taskflow.lede">A per-user task manager with protected routes, filtering, and drag-and-drop prioritisation.</p></div>
+            <div><p class="compact-detail" data-i18n="taskflow.detail">React and Vite client, Express REST API, PostgreSQL persistence, JWT authentication, and Vercel delivery.</p><div class="tag-list"><span class="tag">React</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span></div></div>
+            <div class="project-actions"><a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.demo">Auth demo</a><a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a></div>
           </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Full-Stack Developer · 2025</p>
-          <h3>TaskFlow</h3>
-          <p class="project-lede">
-            A task manager with per-user data, protected routes, filtering, and drag-and-drop prioritisation.
-          </p>
-          <ul class="project-highlights">
-            <li>Connected a React and Vite client to an Express REST API, PostgreSQL persistence, JWT authentication, and Vercel deployment.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">React</span>
-            <span class="tag">Express</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">JWT</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">Auth Demo <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer" aria-label="View TaskFlow source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
 </section>
-      <section id="about">
-  <div class="container">
-    <div class="section-head">
+      <section id="about" aria-labelledby="profile-title">
+  <div class="container profile-layout">
+    <div class="section-head reveal">
       <div>
-        <span class="section-kicker">Background</span>
-        <h2>About</h2>
-        <p>A Melbourne-based computer science student who enjoys owning the full path from product problem to working software.</p>
+        <span class="section-kicker" data-i18n="profile.kicker">02 / Profile</span>
+        <h2 id="profile-title" data-i18n-html="profile.title">Product thinking,<br />engineering depth.</h2>
       </div>
     </div>
 
-    <div class="about-grid">
-      <article class="info-card surface fade-in">
-        <span class="card-kicker">Profile</span>
-        <h3>Cross-platform, product-minded engineering</h3>
-        <p>
-          I’m Sheldon Liu, completing a Bachelor of Science in Computer Science at the University of Melbourne. I build AI-driven web and Android applications, with hands-on work across interface design, backend APIs, data modelling, retrieval systems, testing, and deployment.
-        </p>
-        <dl class="profile-facts">
-          <div>
-            <dt>Based in</dt>
-            <dd>Melbourne, Australia</dd>
-          </div>
-          <div>
-            <dt>Education</dt>
-            <dd>BSc Computer Science, University of Melbourne</dd>
-          </div>
-          <div>
-            <dt>Expected graduation</dt>
-            <dd>November 2026</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="info-card surface fade-in">
-        <span class="card-kicker">Engineering focus</span>
-        <h3>Grounded AI, clear boundaries</h3>
-        <p>
-          I’m especially interested in systems where LLMs work alongside reliable application data. My projects keep product facts and business mutations in controlled backend services while using AI for intent understanding, retrieval-assisted reasoning, and user-facing explanations.
-        </p>
-        <div class="tag-list">
-          <span class="tag">TypeScript</span>
-          <span class="tag">Kotlin</span>
-          <span class="tag">Python</span>
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Qdrant</span>
-          <span class="tag">Jetpack Compose</span>
-          <span class="tag">RAG & SSE</span>
-        </div>
-      </article>
+    <div class="profile-story reveal">
+      <p class="profile-lede" data-i18n="profile.lede">I’m Sheldon Liu, a Computer Science student at the University of Melbourne. I like owning the full path from a product requirement to a working, testable release.</p>
+      <p data-i18n="profile.body">My work spans interface design, APIs, data modelling, retrieval, AI integration, testing, and deployment. I’m especially interested in grounded AI systems where language models help interpret and explain, while reliable application data controls facts and business actions.</p>
     </div>
+
+    <div class="profile-themes">
+      <article class="profile-theme reveal"><span>01</span><h3 data-i18n="profile.theme1Title">Product to production</h3><p data-i18n="profile.theme1Body">Translate a real user need into an interface, service boundary, data model, test strategy, and deployed product.</p></article>
+      <article class="profile-theme reveal"><span>02</span><h3 data-i18n="profile.theme2Title">Grounded AI systems</h3><p data-i18n="profile.theme2Body">Use retrieval and controlled backend data to keep AI experiences useful, inspectable, and honest about their limits.</p></article>
+      <article class="profile-theme reveal"><span>03</span><h3 data-i18n="profile.theme3Title">Cross-platform engineering</h3><p data-i18n="profile.theme3Body">Work across web, Android, backend services, databases, and cloud delivery without losing the product thread.</p></article>
+    </div>
+  </div>
+</section>
+      <section id="capabilities" aria-labelledby="capabilities-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-kicker" data-i18n="capabilities.kicker">03 / Capabilities</span>
+        <h2 id="capabilities-title" data-i18n="capabilities.title">A connected engineering toolkit.</h2>
+        <p data-i18n="capabilities.intro">The useful part is not the number of tools. It is knowing where each one belongs in a dependable product system.</p>
+      </div>
+    </div>
+
+    <div class="capability-list reveal">
+      <article><span class="capability-number">01</span><h3 data-i18n="capabilities.ai">AI and RAG</h3><p data-i18n="capabilities.aiTools">LLM APIs, conversational AI, recommendations, Qdrant, RAG design and evaluation, prompt engineering, summarisation</p></article>
+      <article><span class="capability-number">02</span><h3 data-i18n="capabilities.web">Web engineering</h3><p data-i18n="capabilities.webTools">Next.js, React, TypeScript, JavaScript, Node.js, FastAPI, REST APIs, SSE</p></article>
+      <article><span class="capability-number">03</span><h3 data-i18n="capabilities.mobile">Mobile</h3><p data-i18n="capabilities.mobileTools">Kotlin, Android Native, Jetpack Compose, Java</p></article>
+      <article><span class="capability-number">04</span><h3 data-i18n="capabilities.data">Data and cloud</h3><p data-i18n="capabilities.dataTools">PostgreSQL, MongoDB, Prisma, Mongoose, Redis, AWS, Vercel, Render, Cloudflare R2, Cloudinary</p></article>
+      <article><span class="capability-number">05</span><h3 data-i18n="capabilities.product">Product engineering</h3><p data-i18n="capabilities.productTools">Data modelling, RBAC, OAuth 2.0, JWT, Stripe, rate limiting, Vitest, CI/CD, deployment</p></article>
+    </div>
+  </div>
+</section>
+      <section id="education" aria-labelledby="education-title">
+  <div class="container education-layout">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-kicker" data-i18n="education.kicker">04 / Education</span>
+        <h2 id="education-title" data-i18n="education.title">Computer Science at Melbourne.</h2>
+      </div>
+    </div>
+
+    <article class="education-record reveal">
+      <div class="education-date"><span>2023</span><span aria-hidden="true">—</span><span>2026</span></div>
+      <div>
+        <h3 data-i18n="education.university">University of Melbourne</h3>
+        <p class="education-degree" data-i18n="education.degree">Bachelor of Science in Computer Science</p>
+        <p class="education-meta" data-i18n="education.meta">March 2023 to November 2026 · Melbourne, Australia</p>
+      </div>
+      <div class="coursework">
+        <span data-i18n="education.courseworkLabel">Selected coursework</span>
+        <p data-i18n="education.coursework">Algorithms and Data Structures, Software Modelling, Database Systems, Foundations of Artificial Intelligence, and Web Computing</p>
+      </div>
+    </article>
   </div>
 </section>
       <section id="contact">
   <div class="container">
     <div class="contact-shell surface fade-in">
       <div class="contact-copy">
-        <span class="section-kicker">Open to opportunities</span>
-        <h2>Let’s build useful software.</h2>
-        <p>
-          I’m currently exploring software engineering opportunities in Melbourne across full-stack web, AI-enabled products, and Android development.
-        </p>
+        <span class="section-kicker" data-i18n="contact.kicker">05 / Contact</span>
+        <h2 data-i18n="contact.title">Let’s build useful software.</h2>
+        <p data-i18n="contact.body">I’m currently exploring software engineering opportunities in Melbourne across full-stack web, AI-enabled products, and Android development.</p>
       </div>
       <div class="contact-actions" aria-label="Contact links">
-        <a class="btn btn-primary" href="mailto:lxd040715@gmail.com">Start a conversation</a>
+        <a class="btn btn-primary" href="mailto:lxd040715@gmail.com" data-i18n="contact.email">Start a conversation</a>
         <a class="btn" href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn" href="https://github.com/Sheldon715" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" data-i18n="nav.resume">Résumé</a>
       </div>
     </div>
   </div>
@@ -435,7 +402,7 @@
     <footer>
   <div class="container footer-inner">
     <p>&copy; 2026 Sheldon Liu.</p>
-    <p>Built in Melbourne with HTML, CSS, and JavaScript.</p>
+    <p data-i18n="footer.note">Built in Melbourne with HTML, CSS, and JavaScript.</p>
   </div>
 </footer>
     <script src="assets/js/main.js?v=20260910a" defer></script>

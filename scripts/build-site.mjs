@@ -8,8 +8,10 @@ const sections = {
   background: "src/sections/background.html",
   header: "src/sections/header.html",
   hero: "src/sections/hero.html",
-  about: "src/sections/about.html",
   projects: "src/sections/projects.html",
+  about: "src/sections/about.html",
+  capabilities: "src/sections/capabilities.html",
+  education: "src/sections/education.html",
   contact: "src/sections/contact.html",
   footer: "src/sections/footer.html",
 };

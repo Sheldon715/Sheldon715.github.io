@@ -1,202 +1,148 @@
-<section id="projects">
+<section id="projects" aria-labelledby="work-title">
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="section-kicker">01 / Selected work</span>
-        <h2>Built as systems,<br />not just screens.</h2>
-        <p>Each project is a record of the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and deployment.</p>
+        <span class="section-kicker" data-i18n="work.kicker">01 / Selected work</span>
+        <h2 id="work-title" data-i18n-html="work.title">Built as systems,<br />not just screens.</h2>
+        <p data-i18n="work.intro">Each project records the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and delivery.</p>
       </div>
     </div>
 
-    <div class="projects-grid">
-      <article class="project-card project-card--text project-card--wide surface reveal" aria-labelledby="shopmate-title">
-        <header class="project-feature-head">
-          <div>
-            <span class="preview-label">Primary build / AI + Android</span>
-            <p class="project-role">Full-Stack Lead Developer — 2026</p>
-          </div>
-          <span class="project-number" aria-hidden="true">01</span>
-        </header>
+    <div class="work-layout">
+      <aside class="work-index reveal" aria-label="Project index">
+        <p data-i18n="work.index">Build index</p>
+        <ol>
+          <li><a href="#shopmate"><span>01</span>ShopMate</a></li>
+          <li><a href="#devstash"><span>02</span>DevStash</a></li>
+          <li><a href="#propertypulse"><span>03</span>PropertyPulse</a></li>
+          <li><a href="#taskflow"><span>04</span>TaskFlow</a></li>
+        </ol>
+      </aside>
 
-        <div class="project-intro">
-          <div>
-            <h3 id="shopmate-title">ShopMate</h3>
-            <p class="project-lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View source <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-
-        <div class="shopmate-system" aria-label="ShopMate system architecture">
-          <div class="system-label">
-            <span>System route</span>
-            <p>Intent enters through the app; facts and mutations stay inside controlled services.</p>
-          </div>
-          <ol>
-            <li><span>Client</span><strong>Kotlin + Compose</strong></li>
-            <li><span>API</span><strong>Node + TypeScript</strong></li>
-            <li><span>Facts</span><strong>PostgreSQL</strong></li>
-            <li><span>Retrieval</span><strong>Qdrant + RAG</strong></li>
-            <li><span>Response</span><strong>LLM + SSE</strong></li>
-          </ol>
-        </div>
-
-        <div class="project-proof-grid">
-          <div class="proof-point proof-point--wide">
-            <span>Product boundary</span>
-            <p>The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>&lt;1s</strong>
-            <span>First streamed token after resume</span>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>1.000</strong>
-            <span>Recall@5 on a fixed 111-query baseline</span>
-          </div>
-          <div class="proof-point metric-point">
-            <strong>0.989</strong>
-            <span>MRR@10 on the same offline set</span>
-          </div>
-        </div>
-
-        <footer class="project-footer">
-          <div class="tag-list" aria-label="ShopMate technology stack">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Qdrant</span>
-            <span class="tag">RAG</span>
-            <span class="tag">SSE</span>
-          </div>
-          <p class="benchmark-note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
-        </footer>
-      </article>
-
-      <article class="project-card project-card--split project-card--wide surface fade-in">
-        <a class="project-cover" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/devstash-homepage-640.webp 640w, assets/images/devstash-homepage-960.webp 960w, assets/images/devstash-homepage-1280.webp 1280w, assets/images/devstash-homepage-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/devstash-homepage.png" alt="DevStash dashboard showing saved developer resources, workspace stats, and recent items" width="2518" height="1278" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Full-Stack SaaS</span>
-              <span class="project-number" aria-hidden="true">02</span>
+      <div class="project-chapters">
+        <article class="project-chapter project-chapter--primary reveal" id="shopmate" aria-labelledby="shopmate-title">
+          <header class="chapter-head">
+            <div>
+              <span class="chapter-type" data-i18n="shopmate.type">Primary build / AI + Android</span>
+              <p class="project-role" data-i18n="shopmate.role">Full-Stack Lead Developer — 2026</p>
             </div>
-            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
-          </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Independent Developer · 2026</p>
-          <h3>DevStash</h3>
-          <p class="project-lede">
-            A developer knowledge hub for saving, organising, and reusing snippets, prompts, commands, notes, files, images, and links.
-          </p>
-          <ul class="project-highlights">
-            <li>Designed a unified Prisma and Neon PostgreSQL data model with Auth.js access flows and editor-focused resource workflows.</li>
-            <li>Integrated Stripe feature gates, Cloudflare R2 uploads, Upstash Redis controls, and AI-assisted tagging, summaries, and explanations.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Auth.js</span>
-            <span class="tag">Stripe</span>
-            <span class="tag">Cloudflare R2</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live demo">Live Product <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer" aria-label="View DevStash source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+            <span class="project-number" aria-hidden="true">01</span>
+          </header>
 
-      <article class="project-card surface fade-in">
-        <a class="project-cover" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/property-pulse-home-640.webp 640w, assets/images/property-pulse-home-960.webp 960w, assets/images/property-pulse-home-1280.webp 1280w, assets/images/property-pulse-home-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/property-pulse-home.png" alt="Property Pulse homepage showing real estate search and listing cards" width="3043" height="1602" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Real Estate Platform</span>
+          <div class="chapter-intro">
+            <div>
+              <h3 id="shopmate-title">ShopMate</h3>
+              <p class="project-lede" data-i18n="shopmate.lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
+            </div>
+            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" data-i18n="actions.source">View source</a>
+          </div>
+
+          <div class="shopmate-system" aria-label="ShopMate system architecture">
+            <div class="system-label">
+              <span data-i18n="shopmate.routeLabel">System route</span>
+              <p data-i18n="shopmate.routeCopy">Intent enters through the app; facts and mutations stay inside controlled services.</p>
+            </div>
+            <ol>
+              <li><span data-i18n="shopmate.client">Client</span><strong>Kotlin + Compose</strong></li>
+              <li><span>API</span><strong>Node + TypeScript</strong></li>
+              <li><span data-i18n="shopmate.facts">Facts</span><strong>PostgreSQL</strong></li>
+              <li><span data-i18n="shopmate.retrieval">Retrieval</span><strong>Qdrant + RAG</strong></li>
+              <li><span data-i18n="shopmate.response">Response</span><strong>LLM + SSE</strong></li>
+            </ol>
+          </div>
+
+          <div class="evidence-grid">
+            <div class="evidence-copy">
+              <span data-i18n="shopmate.boundaryLabel">Product boundary</span>
+              <p data-i18n="shopmate.boundary">The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
+            </div>
+            <dl class="metric-list">
+              <div><dt>&lt;1s</dt><dd data-i18n="shopmate.metric1">First streamed token after resume</dd></div>
+              <div><dt>1.000</dt><dd data-i18n="shopmate.metric2">Recall@5 on a fixed 111-query baseline</dd></div>
+              <div><dt>0.989</dt><dd data-i18n="shopmate.metric3">MRR@10 on the same offline set</dd></div>
+            </dl>
+          </div>
+
+          <footer class="chapter-footer">
+            <div class="tag-list" aria-label="ShopMate technology stack">
+              <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Qdrant</span><span class="tag">RAG</span><span class="tag">SSE</span><span class="tag">Render</span>
+            </div>
+            <p class="benchmark-note" data-i18n="shopmate.note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
+          </footer>
+        </article>
+
+        <article class="project-chapter project-chapter--visual reveal" id="devstash" aria-labelledby="devstash-title">
+          <header class="chapter-head">
+            <div>
+              <span class="chapter-type" data-i18n="devstash.type">Featured build / Developer SaaS</span>
+              <p class="project-role" data-i18n="devstash.role">Independent Developer — 2026</p>
+            </div>
+            <span class="project-number" aria-hidden="true">02</span>
+          </header>
+
+          <a class="chapter-image" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open DevStash live product">
+            <picture>
+              <source type="image/webp" srcset="assets/images/devstash-homepage-640.webp 640w, assets/images/devstash-homepage-960.webp 960w, assets/images/devstash-homepage-1280.webp 1280w, assets/images/devstash-homepage-1920.webp 1920w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1280px) calc(100vw - 10rem), 1040px" />
+              <img src="assets/images/devstash-homepage.png" alt="DevStash dashboard showing saved developer resources, workspace stats, and recent items" width="2518" height="1278" loading="lazy" decoding="async" />
+            </picture>
+            <span class="image-action" data-i18n="actions.live">Open live product</span>
+          </a>
+
+          <div class="chapter-copy-grid">
+            <div>
+              <h3 id="devstash-title">DevStash</h3>
+              <p class="project-lede" data-i18n="devstash.lede">A developer knowledge workspace for saving, organising, and reusing snippets, prompts, commands, notes, files, images, and links.</p>
+            </div>
+            <div class="decision-list">
+              <p data-i18n="devstash.decision1">Designed a unified Prisma and Neon PostgreSQL model around fast capture, retrieval, and editor-focused resource workflows.</p>
+              <p data-i18n="devstash.decision2">Connected Auth.js and RBAC with Stripe feature gates, Cloudflare R2 uploads, and Upstash Redis controls.</p>
+              <p data-i18n="devstash.decision3">Added AI-assisted tagging, summaries, and code explanations, then delivered the product through Vitest, CI/CD, and Vercel.</p>
+            </div>
+          </div>
+
+          <footer class="chapter-footer">
+            <div class="tag-list"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
+            <div class="project-actions">
+              <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.live">Live product</a>
+              <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a>
+            </div>
+          </footer>
+        </article>
+
+        <article class="project-chapter project-chapter--split reveal" id="propertypulse" aria-labelledby="property-title">
+          <div class="chapter-split-media">
+            <a class="chapter-image" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open PropertyPulse live product">
+              <picture>
+                <source type="image/webp" srcset="assets/images/property-pulse-home-640.webp 640w, assets/images/property-pulse-home-960.webp 960w, assets/images/property-pulse-home-1280.webp 1280w, assets/images/property-pulse-home-1920.webp 1920w" sizes="(max-width: 960px) calc(100vw - 2rem), 540px" />
+                <img src="assets/images/property-pulse-home.png" alt="PropertyPulse homepage showing real estate search and listing cards" width="3043" height="1602" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+          </div>
+          <div class="chapter-split-copy">
+            <header class="chapter-head">
+              <div><span class="chapter-type" data-i18n="property.type">Product build / Real estate</span><p class="project-role" data-i18n="property.role">Full-Stack Developer — 2025</p></div>
               <span class="project-number" aria-hidden="true">03</span>
-            </div>
-            <span class="project-cover-cta">Open live product <span aria-hidden="true">↗</span></span>
+            </header>
+            <h3 id="property-title">PropertyPulse</h3>
+            <p class="project-lede" data-i18n="property.lede">A responsive property platform spanning discovery, search, property detail, and authenticated management flows.</p>
+            <div class="decision-list"><p data-i18n="property.decision">Integrated Google OAuth, MongoDB-backed listings, Cloudinary media, geocoding, and MapTiler maps into one end-to-end workflow.</p></div>
+            <div class="tag-list"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">MongoDB</span><span class="tag">OAuth</span><span class="tag">Cloudinary</span><span class="tag">MapTiler</span></div>
+            <div class="project-actions"><a class="project-link project-link--primary" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.live">Live product</a><a class="project-link" href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a></div>
           </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Full-Stack Developer · 2025</p>
-          <h3>Property Pulse</h3>
-          <p class="project-lede">
-            A responsive property listing platform covering discovery, search, property detail, and authenticated management flows.
-          </p>
-          <ul class="project-highlights">
-            <li>Integrated Google OAuth, MongoDB-backed listings, Cloudinary media, geocoding, and MapTiler maps.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">Next.js</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">OAuth</span>
-            <span class="tag">Cloudinary</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://property-pulse-app-snowy.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Property Pulse live demo">Live Product <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/property-pulse-app" target="_blank" rel="noreferrer" aria-label="View Property Pulse source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project-card surface fade-in">
-        <a class="project-cover" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/taskflow-home-640.webp 640w, assets/images/taskflow-home-960.webp 960w, assets/images/taskflow-home-1280.webp 1280w, assets/images/taskflow-home-1920.webp 1920w"
-              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-            />
-            <img src="assets/images/taskflow-home.png" alt="TaskFlow dashboard showing task columns and productivity controls" width="3071" height="1593" loading="lazy" decoding="async" />
-          </picture>
-          <div class="project-cover-overlay">
-            <div class="project-cover-top">
-              <span class="project-type">Task Management App</span>
-              <span class="project-number" aria-hidden="true">04</span>
-            </div>
-            <span class="project-cover-cta">Open authentication demo <span aria-hidden="true">↗</span></span>
+        <article class="project-chapter project-chapter--compact reveal" id="taskflow" aria-labelledby="taskflow-title">
+          <header class="chapter-head">
+            <div><span class="chapter-type" data-i18n="taskflow.type">Other work / Task management</span><p class="project-role" data-i18n="taskflow.role">Full-Stack Developer — 2025</p></div>
+            <span class="project-number" aria-hidden="true">04</span>
+          </header>
+          <div class="compact-project-grid">
+            <div><h3 id="taskflow-title">TaskFlow</h3><p class="project-lede" data-i18n="taskflow.lede">A per-user task manager with protected routes, filtering, and drag-and-drop prioritisation.</p></div>
+            <div><p class="compact-detail" data-i18n="taskflow.detail">React and Vite client, Express REST API, PostgreSQL persistence, JWT authentication, and Vercel delivery.</p><div class="tag-list"><span class="tag">React</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span></div></div>
+            <div class="project-actions"><a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" data-i18n="actions.demo">Auth demo</a><a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer" data-i18n="actions.sourceShort">Source</a></div>
           </div>
-        </a>
-        <div class="project-body">
-          <p class="project-role">Full-Stack Developer · 2025</p>
-          <h3>TaskFlow</h3>
-          <p class="project-lede">
-            A task manager with per-user data, protected routes, filtering, and drag-and-drop prioritisation.
-          </p>
-          <ul class="project-highlights">
-            <li>Connected a React and Vite client to an Express REST API, PostgreSQL persistence, JWT authentication, and Vercel deployment.</li>
-          </ul>
-          <div class="tag-list">
-            <span class="tag">React</span>
-            <span class="tag">Express</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">JWT</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open TaskFlow authentication demo">Auth Demo <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noreferrer" aria-label="View TaskFlow source code on GitHub">Source</a>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
 </section>
