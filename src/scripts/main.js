@@ -9,6 +9,7 @@ const languageButtons = document.querySelectorAll("[data-language]");
 const navShell = document.querySelector(".nav");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+const scrollProgress = document.querySelector(".scroll-progress");
 
 const translations = {
   zh: {
@@ -168,3 +169,19 @@ if ("IntersectionObserver" in window) {
   }, { rootMargin: "-20% 0px -55%", threshold: [0, 0.15, 0.4] });
   document.querySelectorAll(".project-chapter[id]").forEach((chapter) => projectObserver.observe(chapter));
 }
+
+let scrollFrame = 0;
+const updateScrollProgress = () => {
+  scrollFrame = 0;
+  if (!scrollProgress) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+  scrollProgress.style.transform = `scaleX(${progress})`;
+};
+
+window.addEventListener("scroll", () => {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScrollProgress);
+}, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+updateScrollProgress();
