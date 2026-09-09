@@ -1,52 +1,68 @@
 <section id="projects">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div>
-        <span class="section-kicker">Selected work</span>
-        <h2>Projects</h2>
-        <p>End-to-end builds that show how I connect product thinking, interface work, backend systems, data, and AI.</p>
+        <span class="section-kicker">01 / Selected work</span>
+        <h2>Built as systems,<br />not just screens.</h2>
+        <p>Each project is a record of the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and deployment.</p>
       </div>
     </div>
 
     <div class="projects-grid">
-      <article class="project-card project-card--text project-card--wide surface fade-in">
-        <div class="project-feature-head">
+      <article class="project-card project-card--text project-card--wide surface reveal" aria-labelledby="shopmate-title">
+        <header class="project-feature-head">
           <div>
-            <span class="preview-label">Featured AI + Android Project</span>
-            <p class="project-role">Full-Stack Lead Developer · 2026</p>
+            <span class="preview-label">Primary build / AI + Android</span>
+            <p class="project-role">Full-Stack Lead Developer — 2026</p>
           </div>
           <span class="project-number" aria-hidden="true">01</span>
-        </div>
+        </header>
 
         <div class="project-intro">
           <div>
-            <h3>ShopMate</h3>
-            <p class="project-lede">
-              An Android-native conversational shopping assistant that turns natural-language needs into grounded product recommendations, comparisons, cart actions, and a simulated checkout flow.
-            </p>
+            <h3 id="shopmate-title">ShopMate</h3>
+            <p class="project-lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
           </div>
           <div class="project-links">
-            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View Source <span aria-hidden="true">↗</span></a>
+            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View source <span aria-hidden="true">↗</span></a>
           </div>
+        </div>
+
+        <div class="shopmate-system" aria-label="ShopMate system architecture">
+          <div class="system-label">
+            <span>System route</span>
+            <p>Intent enters through the app; facts and mutations stay inside controlled services.</p>
+          </div>
+          <ol>
+            <li><span>Client</span><strong>Kotlin + Compose</strong></li>
+            <li><span>API</span><strong>Node + TypeScript</strong></li>
+            <li><span>Facts</span><strong>PostgreSQL</strong></li>
+            <li><span>Retrieval</span><strong>Qdrant + RAG</strong></li>
+            <li><span>Response</span><strong>LLM + SSE</strong></li>
+          </ol>
         </div>
 
         <div class="project-proof-grid">
-          <div class="proof-point">
-            <span>Architecture</span>
-            <p>Kotlin and Jetpack Compose client, Node.js API, PostgreSQL facts, Qdrant retrieval, LLM integration, and SSE streaming.</p>
+          <div class="proof-point proof-point--wide">
+            <span>Product boundary</span>
+            <p>The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
           </div>
-          <div class="proof-point">
-            <span>Safety boundary</span>
-            <p>The LLM interprets intent while backend services validate product facts and cart mutations, failing closed on ambiguous targets.</p>
+          <div class="proof-point metric-point">
+            <strong>&lt;1s</strong>
+            <span>First streamed token after resume</span>
           </div>
-          <div class="proof-point">
-            <span>Evaluation</span>
-            <p>A fixed 111-query offline retrieval baseline recorded recall@5 of 1.000 and MRR@10 of 0.989.</p>
+          <div class="proof-point metric-point">
+            <strong>1.000</strong>
+            <span>Recall@5 on a fixed 111-query baseline</span>
+          </div>
+          <div class="proof-point metric-point">
+            <strong>0.989</strong>
+            <span>MRR@10 on the same offline set</span>
           </div>
         </div>
 
-        <div class="project-footer">
-          <div class="tag-list">
+        <footer class="project-footer">
+          <div class="tag-list" aria-label="ShopMate technology stack">
             <span class="tag">Kotlin</span>
             <span class="tag">Jetpack Compose</span>
             <span class="tag">TypeScript</span>
@@ -55,8 +71,8 @@
             <span class="tag">RAG</span>
             <span class="tag">SSE</span>
           </div>
-          <p class="benchmark-note">Offline retrieval benchmark; not a production accuracy or latency claim.</p>
-        </div>
+          <p class="benchmark-note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
+        </footer>
       </article>
 
       <article class="project-card project-card--split project-card--wide surface fade-in">

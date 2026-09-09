@@ -1,34 +1,49 @@
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-copy fade-in">
-      <div class="eyebrow">Melbourne, Australia · Open to software engineering opportunities</div>
-      <h1>
-        Full-stack software engineer building <span class="gradient">AI-powered web and Android products.</span>
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <aside class="hero-index hero-reveal" aria-label="Portfolio context">
+      <span class="index-code">SL / 2026</span>
+      <p>Software engineering portfolio</p>
+      <dl>
+        <div>
+          <dt>Base</dt>
+          <dd>Melbourne, AU</dd>
+        </div>
+        <div>
+          <dt>Study</dt>
+          <dd>University of Melbourne</dd>
+        </div>
+        <div>
+          <dt>Graduating</dt>
+          <dd>November 2026</dd>
+        </div>
+      </dl>
+    </aside>
+
+    <div class="hero-copy">
+      <p class="hero-intro hero-reveal">Sheldon Liu — AI-enabled full-stack software engineer</p>
+      <h1 id="hero-title" aria-label="I build AI products from interface to infrastructure.">
+        <span class="hero-line"><span>I build AI products</span></span>
+        <span class="hero-line"><span>from interface</span></span>
+        <span class="hero-line"><span>to infrastructure.</span></span>
       </h1>
-      <p>
-        I design end-to-end systems across React, Next.js, Kotlin, Node.js, PostgreSQL, and RAG—turning product ideas into grounded, testable user experiences.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">View Resume</a>
-        <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="text-link">LinkedIn <span aria-hidden="true">↗</span></a>
+      <div class="hero-summary hero-reveal">
+        <p>I turn product ideas into reliable web and Android systems—connecting thoughtful interfaces, backend services, data, retrieval, and deployment.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore the work</a>
+          <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">Read résumé</a>
+        </div>
       </div>
+    </div>
 
-      <ul class="strengths" aria-label="Engineering strengths">
-        <li class="strength surface fade-in">
-          <span>AI & RAG</span>
-          <strong>Qdrant retrieval, grounded product facts, LLM integration</strong>
-        </li>
-        <li class="strength surface fade-in">
-          <span>Full-Stack Web</span>
-          <strong>React, Next.js, Node.js, PostgreSQL, authentication</strong>
-        </li>
-        <li class="strength surface fade-in">
-          <span>Android</span>
-          <strong>Kotlin, Jetpack Compose, mobile-first product flows</strong>
-        </li>
-      </ul>
+    <div class="product-path hero-reveal" aria-label="End-to-end product path">
+      <p>Product path</p>
+      <ol>
+        <li><span>01</span>Brief</li>
+        <li><span>02</span>Interface</li>
+        <li><span>03</span>Service</li>
+        <li><span>04</span>Data + AI</li>
+        <li><span>05</span>Deploy</li>
+      </ol>
     </div>
   </div>
 </section>

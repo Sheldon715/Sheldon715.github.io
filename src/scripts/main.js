@@ -1,6 +1,5 @@
 const THEME_KEY = "portfolio-theme";
 const themeToggle = document.querySelector(".theme-toggle");
-const themeToggleIcon = document.querySelector(".theme-toggle-icon");
 const themeToggleLabel = document.querySelector(".theme-toggle-label");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
@@ -22,17 +21,13 @@ const applyTheme = (theme, persist = false) => {
   document.documentElement.style.colorScheme = nextTheme;
 
   if (themeColor) {
-    themeColor.content = nextTheme === "light" ? "#fff9ed" : "#08101d";
+    themeColor.content = nextTheme === "light" ? "#f5f7fb" : "#0a101a";
   }
 
   if (themeToggle) {
     const action = `Switch to ${targetTheme} theme`;
     themeToggle.setAttribute("aria-label", action);
     themeToggle.title = action;
-  }
-
-  if (themeToggleIcon) {
-    themeToggleIcon.textContent = targetTheme === "light" ? "☀" : "☾";
   }
 
   if (themeToggleLabel) {
@@ -60,3 +55,19 @@ systemTheme.addEventListener?.("change", (event) => {
     applyTheme(event.matches ? "light" : "dark");
   }
 });
+
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -10%", threshold: 0.1 });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}

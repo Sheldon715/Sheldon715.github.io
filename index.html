@@ -6,7 +6,7 @@
     <title>Sheldon Liu | Full-Stack Software Engineer</title>
     <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
     <meta name="author" content="Sheldon Liu" />
-    <meta name="theme-color" content="#08101d" />
+    <meta name="theme-color" content="#0a101a" />
     <script>
       (() => {
         const key = "portfolio-theme";
@@ -21,9 +21,10 @@
           theme = "dark";
         }
 
+        document.documentElement.classList.add("js");
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
-        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#fff9ed" : "#08101d";
+        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#f5f7fb" : "#0a101a";
       })();
     </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
@@ -42,8 +43,8 @@
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260810e" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260910a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -82,27 +83,22 @@
     </script>
   </head>
   <body>
-    <div class="bg-animation" aria-hidden="true">
-  <span class="orb orb-1"></span>
-  <span class="orb orb-2"></span>
-  <span class="orb orb-3"></span>
-  <span class="grid-glow"></span>
-</div>
+    <div class="site-frame" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#home" aria-label="Sheldon Liu, back to home">
-      <span class="brand-mark" aria-hidden="true">S</span>
-      <span>SHELDON LIU</span>
+      <span class="brand-mark" aria-hidden="true">SL</span>
+      <span class="brand-name">Sheldon Liu</span>
     </a>
 
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#projects">Projects</a>
-      <a class="nav-about" href="#about">About</a>
-      <a class="nav-contact" href="#contact">Contact</a>
-      <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn nav-resume">Resume</a>
+      <a href="#projects"><span aria-hidden="true">01</span> Work</a>
+      <a class="nav-about" href="#about"><span aria-hidden="true">02</span> Profile</a>
+      <a class="nav-contact" href="#contact"><span aria-hidden="true">03</span> Contact</a>
+      <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="nav-resume">Résumé</a>
       <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
-        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+        <span class="theme-toggle-dot" aria-hidden="true"></span>
         <span class="theme-toggle-label">Light</span>
       </button>
     </nav>
@@ -110,89 +106,120 @@
 </header>
 
     <main id="main-content">
-      <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-copy fade-in">
-      <div class="eyebrow">Melbourne, Australia · Open to software engineering opportunities</div>
-      <h1>
-        Full-stack software engineer building <span class="gradient">AI-powered web and Android products.</span>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <aside class="hero-index hero-reveal" aria-label="Portfolio context">
+      <span class="index-code">SL / 2026</span>
+      <p>Software engineering portfolio</p>
+      <dl>
+        <div>
+          <dt>Base</dt>
+          <dd>Melbourne, AU</dd>
+        </div>
+        <div>
+          <dt>Study</dt>
+          <dd>University of Melbourne</dd>
+        </div>
+        <div>
+          <dt>Graduating</dt>
+          <dd>November 2026</dd>
+        </div>
+      </dl>
+    </aside>
+
+    <div class="hero-copy">
+      <p class="hero-intro hero-reveal">Sheldon Liu — AI-enabled full-stack software engineer</p>
+      <h1 id="hero-title" aria-label="I build AI products from interface to infrastructure.">
+        <span class="hero-line"><span>I build AI products</span></span>
+        <span class="hero-line"><span>from interface</span></span>
+        <span class="hero-line"><span>to infrastructure.</span></span>
       </h1>
-      <p>
-        I design end-to-end systems across React, Next.js, Kotlin, Node.js, PostgreSQL, and RAG—turning product ideas into grounded, testable user experiences.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">View Resume</a>
-        <a href="https://www.linkedin.com/in/sheldon-liu-b01bb3232/" target="_blank" rel="noreferrer" class="text-link">LinkedIn <span aria-hidden="true">↗</span></a>
+      <div class="hero-summary hero-reveal">
+        <p>I turn product ideas into reliable web and Android systems—connecting thoughtful interfaces, backend services, data, retrieval, and deployment.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore the work</a>
+          <a href="assets/Sheldon-Liu-Resume.pdf" target="_blank" rel="noreferrer" class="btn">Read résumé</a>
+        </div>
       </div>
+    </div>
 
-      <ul class="strengths" aria-label="Engineering strengths">
-        <li class="strength surface fade-in">
-          <span>AI & RAG</span>
-          <strong>Qdrant retrieval, grounded product facts, LLM integration</strong>
-        </li>
-        <li class="strength surface fade-in">
-          <span>Full-Stack Web</span>
-          <strong>React, Next.js, Node.js, PostgreSQL, authentication</strong>
-        </li>
-        <li class="strength surface fade-in">
-          <span>Android</span>
-          <strong>Kotlin, Jetpack Compose, mobile-first product flows</strong>
-        </li>
-      </ul>
+    <div class="product-path hero-reveal" aria-label="End-to-end product path">
+      <p>Product path</p>
+      <ol>
+        <li><span>01</span>Brief</li>
+        <li><span>02</span>Interface</li>
+        <li><span>03</span>Service</li>
+        <li><span>04</span>Data + AI</li>
+        <li><span>05</span>Deploy</li>
+      </ol>
     </div>
   </div>
 </section>
       <section id="projects">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div>
-        <span class="section-kicker">Selected work</span>
-        <h2>Projects</h2>
-        <p>End-to-end builds that show how I connect product thinking, interface work, backend systems, data, and AI.</p>
+        <span class="section-kicker">01 / Selected work</span>
+        <h2>Built as systems,<br />not just screens.</h2>
+        <p>Each project is a record of the decisions behind the interface: product scope, architecture, data boundaries, evaluation, and deployment.</p>
       </div>
     </div>
 
     <div class="projects-grid">
-      <article class="project-card project-card--text project-card--wide surface fade-in">
-        <div class="project-feature-head">
+      <article class="project-card project-card--text project-card--wide surface reveal" aria-labelledby="shopmate-title">
+        <header class="project-feature-head">
           <div>
-            <span class="preview-label">Featured AI + Android Project</span>
-            <p class="project-role">Full-Stack Lead Developer · 2026</p>
+            <span class="preview-label">Primary build / AI + Android</span>
+            <p class="project-role">Full-Stack Lead Developer — 2026</p>
           </div>
           <span class="project-number" aria-hidden="true">01</span>
-        </div>
+        </header>
 
         <div class="project-intro">
           <div>
-            <h3>ShopMate</h3>
-            <p class="project-lede">
-              An Android-native conversational shopping assistant that turns natural-language needs into grounded product recommendations, comparisons, cart actions, and a simulated checkout flow.
-            </p>
+            <h3 id="shopmate-title">ShopMate</h3>
+            <p class="project-lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
           </div>
           <div class="project-links">
-            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View Source <span aria-hidden="true">↗</span></a>
+            <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noreferrer" aria-label="View ShopMate source code on GitHub">View source <span aria-hidden="true">↗</span></a>
           </div>
+        </div>
+
+        <div class="shopmate-system" aria-label="ShopMate system architecture">
+          <div class="system-label">
+            <span>System route</span>
+            <p>Intent enters through the app; facts and mutations stay inside controlled services.</p>
+          </div>
+          <ol>
+            <li><span>Client</span><strong>Kotlin + Compose</strong></li>
+            <li><span>API</span><strong>Node + TypeScript</strong></li>
+            <li><span>Facts</span><strong>PostgreSQL</strong></li>
+            <li><span>Retrieval</span><strong>Qdrant + RAG</strong></li>
+            <li><span>Response</span><strong>LLM + SSE</strong></li>
+          </ol>
         </div>
 
         <div class="project-proof-grid">
-          <div class="proof-point">
-            <span>Architecture</span>
-            <p>Kotlin and Jetpack Compose client, Node.js API, PostgreSQL facts, Qdrant retrieval, LLM integration, and SSE streaming.</p>
+          <div class="proof-point proof-point--wide">
+            <span>Product boundary</span>
+            <p>The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
           </div>
-          <div class="proof-point">
-            <span>Safety boundary</span>
-            <p>The LLM interprets intent while backend services validate product facts and cart mutations, failing closed on ambiguous targets.</p>
+          <div class="proof-point metric-point">
+            <strong>&lt;1s</strong>
+            <span>First streamed token after resume</span>
           </div>
-          <div class="proof-point">
-            <span>Evaluation</span>
-            <p>A fixed 111-query offline retrieval baseline recorded recall@5 of 1.000 and MRR@10 of 0.989.</p>
+          <div class="proof-point metric-point">
+            <strong>1.000</strong>
+            <span>Recall@5 on a fixed 111-query baseline</span>
+          </div>
+          <div class="proof-point metric-point">
+            <strong>0.989</strong>
+            <span>MRR@10 on the same offline set</span>
           </div>
         </div>
 
-        <div class="project-footer">
-          <div class="tag-list">
+        <footer class="project-footer">
+          <div class="tag-list" aria-label="ShopMate technology stack">
             <span class="tag">Kotlin</span>
             <span class="tag">Jetpack Compose</span>
             <span class="tag">TypeScript</span>
@@ -201,8 +228,8 @@
             <span class="tag">RAG</span>
             <span class="tag">SSE</span>
           </div>
-          <p class="benchmark-note">Offline retrieval benchmark; not a production accuracy or latency claim.</p>
-        </div>
+          <p class="benchmark-note">Retrieval figures are offline evaluation results, not production accuracy or latency claims.</p>
+        </footer>
       </article>
 
       <article class="project-card project-card--split project-card--wide surface fade-in">
@@ -411,6 +438,6 @@
     <p>Built in Melbourne with HTML, CSS, and JavaScript.</p>
   </div>
 </footer>
-    <script src="assets/js/main.js?v=20260810e" defer></script>
+    <script src="assets/js/main.js?v=20260910a" defer></script>
   </body>
 </html>

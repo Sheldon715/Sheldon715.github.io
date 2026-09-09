@@ -6,7 +6,7 @@
     <title>Sheldon Liu | Full-Stack Software Engineer</title>
     <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
     <meta name="author" content="Sheldon Liu" />
-    <meta name="theme-color" content="#08101d" />
+    <meta name="theme-color" content="#0a101a" />
     <script>
       (() => {
         const key = "portfolio-theme";
@@ -21,9 +21,10 @@
           theme = "dark";
         }
 
+        document.documentElement.classList.add("js");
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
-        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#fff9ed" : "#08101d";
+        document.querySelector('meta[name="theme-color"]').content = theme === "light" ? "#f5f7fb" : "#0a101a";
       })();
     </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
@@ -42,8 +43,8 @@
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260810e" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260910a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -93,6 +94,6 @@
     </main>
 
     {{footer}}
-    <script src="assets/js/main.js?v=20260810e" defer></script>
+    <script src="assets/js/main.js?v=20260910a" defer></script>
   </body>
 </html>
