@@ -10,6 +10,7 @@ const sections = {
   hero: "src/sections/hero.html",
   projects: "src/sections/projects.html",
   about: "src/sections/about.html",
+  experience: "src/sections/experience.html",
   capabilities: "src/sections/capabilities.html",
   education: "src/sections/education.html",
   contact: "src/sections/contact.html",

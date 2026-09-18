@@ -1166,6 +1166,161 @@ section:not(.hero) {
   line-height: 1.65;
 }
 
+.experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  column-gap: clamp(2rem, 8vw, 8rem);
+}
+
+.experience-layout .section-head {
+  grid-column: 1;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 0;
+}
+
+.experience-layout .section-head h2 {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.experience-record {
+  grid-column: 2;
+  align-self: start;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.experience-identity {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.experience-identity::after {
+  content: "";
+  position: absolute;
+  right: -1.6rem;
+  bottom: -3.8rem;
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.experience-status,
+.experience-date {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--quiet);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.experience-status {
+  color: var(--accent);
+}
+
+.experience-status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0.3rem var(--accent-soft);
+}
+
+.experience-date {
+  margin-top: 1.4rem;
+}
+
+.experience-identity h3 {
+  margin-top: 2.5rem;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 580;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.experience-role {
+  max-width: 32ch;
+  margin-top: 0.8rem;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.experience-product {
+  margin-top: 0.5rem;
+  color: var(--quiet);
+  font-size: 0.86rem;
+}
+
+.experience-tags {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.8rem;
+}
+
+.experience-tags span {
+  padding: 0.38rem 0.55rem;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+}
+
+.experience-body {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.experience-lede {
+  max-width: 55ch;
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  line-height: 1.38;
+  letter-spacing: -0.025em;
+}
+
+.experience-focus-grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.experience-focus {
+  padding: 1.25rem 1rem 0 0;
+}
+
+.experience-focus:nth-child(2) {
+  padding-inline: 1rem 0;
+  border-left: 1px solid var(--line);
+}
+
+.experience-focus--wide {
+  grid-column: 1 / -1;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.experience-focus-label {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.experience-focus p {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 #capabilities {
   border-block: 1px solid var(--line);
   background: var(--surface-soft);
@@ -1556,7 +1711,8 @@ html.is-theme-changing *::after {
   .chapter-copy-grid,
   .evidence-grid,
   .project-chapter--split,
-  .profile-layout {
+  .profile-layout,
+  .experience-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1581,7 +1737,9 @@ html.is-theme-changing *::after {
 
   .profile-layout .section-head,
   .profile-story,
-  .profile-themes {
+  .profile-themes,
+  .experience-layout .section-head,
+  .experience-record {
     grid-column: 1;
     grid-row: auto;
   }
@@ -1597,6 +1755,14 @@ html.is-theme-changing *::after {
   .profile-theme + .profile-theme {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .experience-layout .section-head {
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+  }
+
+  .experience-record {
+    width: 100%;
   }
 
   .capability-list article {
@@ -1804,6 +1970,19 @@ html.is-theme-changing *::after {
 
   .coursework {
     grid-column: 1;
+  }
+
+  .experience-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-focus,
+  .experience-focus:nth-child(2),
+  .experience-focus--wide {
+    grid-column: 1;
+    padding: 1.1rem 0 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 }
 
