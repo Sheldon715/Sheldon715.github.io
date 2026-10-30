@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sheldon Liu | Full-Stack Software Engineer</title>
-    <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
+    <title>Sheldon Liu | AI Full-Stack Software Engineer</title>
+    <meta name="description" content="Melbourne-based AI full-stack software engineer building measurable LLM product features across Flutter, Next.js, Android, Supabase, PostgreSQL, pgvector, Qdrant and RAG." />
     <meta name="author" content="Sheldon Liu" />
     <meta name="theme-color" content="#101214" />
     <script>
@@ -14,9 +14,7 @@
 
         try {
           const saved = localStorage.getItem(key);
-          theme = saved === "light" || saved === "dark"
-            ? saved
-            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          if (saved === "light" || saved === "dark") theme = saved;
         } catch {
           theme = "dark";
         }
@@ -28,8 +26,8 @@
       })();
     </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
-    <meta property="og:title" content="Sheldon Liu | Full-Stack Software Engineer" />
-    <meta property="og:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta property="og:title" content="Sheldon Liu | AI Full-Stack Software Engineer" />
+    <meta property="og:description" content="AI product work spanning LLM routing and evaluation, RAG, Flutter, Next.js, Android, Supabase and PostgreSQL." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sheldon715.github.io/" />
     <meta property="og:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
@@ -37,14 +35,14 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Sheldon Liu, full-stack software engineer building AI-powered web and Android products" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sheldon Liu | Full-Stack Software Engineer" />
-    <meta name="twitter:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta name="twitter:title" content="Sheldon Liu | AI Full-Stack Software Engineer" />
+    <meta name="twitter:description" content="AI product work spanning LLM routing and evaluation, RAG, Flutter, Next.js, Android, Supabase and PostgreSQL." />
     <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
     <link rel="icon" href="assets/icons/favicon.svg?v=20260910c" type="image/svg+xml" sizes="any" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260910b" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261030a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,7 +55,7 @@
               "https://github.com/Sheldon715",
               "https://www.linkedin.com/in/sheldon-liu-b01bb3232/"
             ],
-            "jobTitle": "Full-Stack Software Engineer",
+            "jobTitle": "AI Full-Stack Software Engineer",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Melbourne",
@@ -67,7 +65,7 @@
               "@type": "CollegeOrUniversity",
               "name": "University of Melbourne"
             },
-            "knowsAbout": ["React", "Next.js", "Kotlin", "Jetpack Compose", "Node.js", "PostgreSQL", "Qdrant", "Retrieval-Augmented Generation"]
+            "knowsAbout": ["Flutter", "React", "Next.js", "Kotlin", "TypeScript", "Supabase", "PostgreSQL", "pgvector", "Qdrant", "Retrieval-Augmented Generation", "LLM evaluation"]
           },
           {
             "@type": "WebSite",
@@ -97,6 +95,6 @@
     </main>
 
     {{footer}}
-    <script src="assets/js/main.js?v=20260910b" defer></script>
+    <script src="assets/js/main.js?v=20261030a" defer></script>
   </body>
 </html>

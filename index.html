@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sheldon Liu | Full-Stack Software Engineer</title>
-    <meta name="description" content="Melbourne-based full-stack software engineer building AI-powered web and Android products with React, Next.js, Kotlin, Node.js, PostgreSQL, Qdrant, and RAG." />
+    <title>Sheldon Liu | AI Full-Stack Software Engineer</title>
+    <meta name="description" content="Melbourne-based AI full-stack software engineer building measurable LLM product features across Flutter, Next.js, Android, Supabase, PostgreSQL, pgvector, Qdrant and RAG." />
     <meta name="author" content="Sheldon Liu" />
     <meta name="theme-color" content="#101214" />
     <script>
@@ -14,9 +14,7 @@
 
         try {
           const saved = localStorage.getItem(key);
-          theme = saved === "light" || saved === "dark"
-            ? saved
-            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          if (saved === "light" || saved === "dark") theme = saved;
         } catch {
           theme = "dark";
         }
@@ -28,8 +26,8 @@
       })();
     </script>
     <link rel="canonical" href="https://sheldon715.github.io/" />
-    <meta property="og:title" content="Sheldon Liu | Full-Stack Software Engineer" />
-    <meta property="og:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta property="og:title" content="Sheldon Liu | AI Full-Stack Software Engineer" />
+    <meta property="og:description" content="AI product work spanning LLM routing and evaluation, RAG, Flutter, Next.js, Android, Supabase and PostgreSQL." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sheldon715.github.io/" />
     <meta property="og:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
@@ -37,14 +35,14 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Sheldon Liu, full-stack software engineer building AI-powered web and Android products" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sheldon Liu | Full-Stack Software Engineer" />
-    <meta name="twitter:description" content="AI-powered web and Android projects spanning full-stack engineering, RAG, PostgreSQL, Qdrant, Kotlin, and React." />
+    <meta name="twitter:title" content="Sheldon Liu | AI Full-Stack Software Engineer" />
+    <meta name="twitter:description" content="AI product work spanning LLM routing and evaluation, RAG, Flutter, Next.js, Android, Supabase and PostgreSQL." />
     <meta name="twitter:image" content="https://sheldon715.github.io/assets/images/sheldon-liu-og.png" />
     <link rel="icon" href="assets/icons/favicon.svg?v=20260910c" type="image/svg+xml" sizes="any" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260910b" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261030a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,7 +55,7 @@
               "https://github.com/Sheldon715",
               "https://www.linkedin.com/in/sheldon-liu-b01bb3232/"
             ],
-            "jobTitle": "Full-Stack Software Engineer",
+            "jobTitle": "AI Full-Stack Software Engineer",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Melbourne",
@@ -67,7 +65,7 @@
               "@type": "CollegeOrUniversity",
               "name": "University of Melbourne"
             },
-            "knowsAbout": ["React", "Next.js", "Kotlin", "Jetpack Compose", "Node.js", "PostgreSQL", "Qdrant", "Retrieval-Augmented Generation"]
+            "knowsAbout": ["Flutter", "React", "Next.js", "Kotlin", "TypeScript", "Supabase", "PostgreSQL", "pgvector", "Qdrant", "Retrieval-Augmented Generation", "LLM evaluation"]
           },
           {
             "@type": "WebSite",
@@ -134,13 +132,13 @@
         </div>
         <div>
           <dt data-i18n="hero.graduatingLabel">Graduating</dt>
-          <dd data-i18n="hero.graduating">November 2026</dd>
+          <dd data-i18n="hero.graduating">March 2027</dd>
         </div>
       </dl>
     </aside>
 
     <div class="hero-copy">
-      <p class="hero-intro hero-reveal" data-i18n="hero.intro">Sheldon Liu — AI-enabled full-stack software engineer</p>
+      <p class="hero-intro hero-reveal" data-i18n="hero.intro">Sheldon Liu — AI full-stack software engineer</p>
       <h1 id="hero-title" aria-label="I build AI products from interface to infrastructure.">
         <span class="hero-line"><span data-i18n="hero.line1">I build AI products</span></span>
         <span class="hero-line"><span data-i18n="hero.line2">from interface</span></span>
@@ -148,7 +146,7 @@
       </h1>
       <div class="hero-summary hero-reveal">
         <div>
-          <p data-i18n="hero.summary">I turn product ideas into reliable web and Android systems—connecting thoughtful interfaces, backend services, data, retrieval, and deployment.</p>
+          <p data-i18n="hero.summary">I turn LLM capabilities into measurable, shippable product features—across Flutter, web and Android interfaces, backend services, retrieval, evaluation and deployment.</p>
           <p class="availability"><span aria-hidden="true"></span><span data-i18n="hero.availability">Open to software engineering opportunities in Melbourne</span></p>
         </div>
         <div class="hero-actions">
@@ -159,14 +157,14 @@
       </div>
     </div>
 
-    <div class="product-path hero-reveal" aria-label="End-to-end product path">
-      <p data-i18n="hero.path">Product path</p>
+    <div class="product-path product-path--proof hero-reveal" aria-label="Measured outcomes">
+      <p data-i18n="hero.proof">Measured outcomes</p>
       <ol>
-        <li><span>01</span><span data-i18n="hero.pathBrief">Brief</span></li>
-        <li><span>02</span><span data-i18n="hero.pathInterface">Interface</span></li>
-        <li><span>03</span><span data-i18n="hero.pathService">Service</span></li>
-        <li><span>04</span><span data-i18n="hero.pathData">Data + AI</span></li>
-        <li><span>05</span><span data-i18n="hero.pathDeploy">Deploy</span></li>
+        <li><strong>97.4%</strong><span data-i18n="hero.proof1">LLM routing accuracy · Ft.ured</span></li>
+        <li><strong>0.97</strong><span data-i18n="hero.proof2">Top-5 recall in People Discovery</span></li>
+        <li><strong>96.4%</strong><span data-i18n="hero.proof3">Grounded Q&amp;A pass rate, zero fabrications</span></li>
+        <li><strong>1,450+</strong><span data-i18n="hero.proof4">Automated tests running in CI</span></li>
+        <li><strong>~60%</strong><span data-i18n="hero.proof5">Lower first-token latency · ShopMate</span></li>
       </ol>
     </div>
   </div>
@@ -176,39 +174,98 @@
     <div class="section-head reveal">
       <div>
         <span class="section-kicker" data-i18n="experience.kicker">01 / Experience</span>
-        <h2 id="experience-title" data-i18n-html="experience.title">Building the product<br />behind the idea.</h2>
-        <p data-i18n="experience.intro">A current internship where product thinking, mobile interfaces and AI infrastructure meet.</p>
+        <h2 id="experience-title" data-i18n-html="experience.title">AI features,<br />proven by evaluation.</h2>
+        <p data-i18n="experience.intro">An internship where routing, retrieval, grounded answers and Flutter product work all had to hold up under measurement.</p>
       </div>
     </div>
 
     <article class="experience-record reveal">
       <div class="experience-identity">
-        <div class="experience-status"><span class="experience-status-dot" aria-hidden="true"></span><span data-i18n="experience.status">Current build</span></div>
-        <div class="experience-date"><span>2026</span><span aria-hidden="true">—</span><span data-i18n="experience.location">Melbourne / remote</span></div>
-        <h3 data-i18n="experience.company">Ground Zero</h3>
-        <p class="experience-role" data-i18n="experience.role">Full-stack engineering intern · Flutter / AI product</p>
-        <p class="experience-product" data-i18n="experience.product">GroundzeroApp · creative social platform</p>
-        <div class="tag-list experience-tags" aria-label="Internship technologies">
-          <span>Flutter</span><span>Dart</span><span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>AI Skills</span>
+        <div class="experience-identity-copy">
+          <div class="experience-status"><span class="experience-status-dot" aria-hidden="true"></span><span data-i18n="experience.status">Completed internship</span></div>
+          <div class="experience-date"><span>Jul — Oct 2026</span><span aria-hidden="true">·</span><span data-i18n="experience.location">Melbourne / remote</span></div>
+          <div class="experience-brand"><img src="assets/images/ftured-mark.webp" alt="" width="128" height="128" /><h3>Ft.ured</h3></div>
+          <p class="experience-role" data-i18n="experience.role">AI Full-Stack Engineering Intern · Flutter / AI product</p>
+          <p class="experience-product" data-i18n="experience.product">Social app for creatives · AI assistant</p>
+          <div class="tag-list experience-tags" aria-label="Internship technologies">
+            <span>Flutter</span><span>Dart</span><span>Deno</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>pgvector</span><span>RLS</span><span>Trigger.dev</span><span>OpenRouter</span>
+          </div>
         </div>
+        <figure class="astro-card">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="assets/images/ftured-astro-still.webp" />
+            <img src="assets/images/ftured-astro.webp" alt="Animated Astro mascot, the face of Ft.ured’s in-app AI assistant" width="216" height="216" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption><strong>Astro</strong><span data-i18n="experience.astro">In-app AI assistant</span></figcaption>
+        </figure>
       </div>
 
       <div class="experience-body">
-        <p class="experience-lede" data-i18n="experience.lede">I am contributing across Flutter/Dart product surfaces and an Astro AI backend, connecting conversation UI, content flows, user discovery and typed service boundaries into one maintainable product system.</p>
-        <div class="experience-focus-grid">
-          <div class="experience-focus">
-            <span class="experience-focus-label" data-i18n="experience.currentLabel">Current contribution</span>
-            <p data-i18n="experience.current">Conversation UI, message states, inputs and attachments, local session persistence, plus Supabase, PostgreSQL/RLS and Edge Function service boundaries.</p>
+        <p class="experience-lede" data-i18n="experience.lede">I built the AI assistant behind Ft.ured’s social app for creatives—from the Flutter chat surface to the Supabase back end that decides, retrieves and answers—and measured every part of it.</p>
+
+        <div class="route-map" aria-label="Ft.ured AI assistant routing diagram">
+          <div class="route-map-head">
+            <span data-i18n="experience.mapLabel">Decision route</span>
+            <p data-i18n="experience.mapCopy">Simplified diagram · not the client’s production interface</p>
           </div>
-          <div class="experience-focus">
-            <span class="experience-focus-label" data-i18n="experience.futureLabel">Building toward</span>
-            <p data-i18n="experience.future">Skills for onboarding guidance, content suggestions, user discovery and job generation, designed to learn from real product feedback rather than isolated demos.</p>
+          <div class="route-map-flow">
+            <div class="route-node">
+              <span data-i18n="experience.mapInput">Input</span>
+              <strong data-i18n="experience.mapMessage">User message</strong>
+            </div>
+            <div class="route-node route-node--router">
+              <span data-i18n="experience.mapRouter">Router</span>
+              <strong data-i18n="experience.mapClassifier">LLM classifier</strong>
+              <small>Supabase Edge Functions</small>
+            </div>
+            <ol class="route-branches">
+              <li data-i18n="experience.route1">Onboarding guidance</li>
+              <li data-i18n="experience.route2">People Discovery</li>
+              <li data-i18n="experience.route3">In-app Q&amp;A</li>
+              <li data-i18n="experience.route4">Job-post drafting</li>
+              <li data-i18n="experience.route5">Content suggestions</li>
+            </ol>
           </div>
-          <div class="experience-focus experience-focus--wide">
-            <span class="experience-focus-label" data-i18n="experience.feedbackLabel">Feedback loop</span>
-            <p data-i18n="experience.feedback">The next layer is a usable evaluation loop around adoption, rejection, completion, response quality, latency, cost and error rate—so AI behavior can improve with evidence.</p>
+          <div class="route-map-ledger">
+            <span data-i18n="experience.ledger1">Every decision logged: model · cost · latency</span>
+            <span data-i18n="experience.ledger2">Row-level security on user data</span>
           </div>
         </div>
+
+        <dl class="experience-metrics">
+          <div><dt>97.4%</dt><dd data-i18n="experience.metric1">Routing accuracy, up from 82.5%</dd></div>
+          <div><dt>0.97</dt><dd data-i18n="experience.metric2">Top-5 recall in People Discovery, 0.91 precision</dd></div>
+          <div><dt>96.4%</dt><dd data-i18n="experience.metric3">Blind-evaluation pass rate, zero fabricated answers</dd></div>
+          <div><dt>1,450+</dt><dd data-i18n="experience.metric4">Back-end and Flutter tests running in CI</dd></div>
+        </dl>
+
+        <ol class="experience-modules">
+          <li>
+            <span>01</span>
+            <h4 data-i18n="experience.module1Title">Decision routing</h4>
+            <p data-i18n="experience.module1">An LLM classifies each request on Supabase Edge Functions and routes it across five product capabilities, with cost and latency logged for every decision and row-level security protecting user data.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h4 data-i18n="experience.module2Title">Evaluation-gated model choice</h4>
+            <p data-i18n="experience.module2">A 241-message evaluation set compared models on routing accuracy, safety, latency and cost; every prompt-injection test passes at about 620 ms P95.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h4 data-i18n="experience.module3Title">People Discovery</h4>
+            <p data-i18n="experience.module3">Natural-language search for creatives that combines keyword and pgvector retrieval with an LLM relevance layer to filter and rank candidates—under 2.4 s P95 on 50 unseen queries, run 3 times each.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h4 data-i18n="experience.module4Title">Grounded Q&amp;A</h4>
+            <p data-i18n="experience.module4">An in-app assistant that answers only from a curated knowledge base, with navigation limited to approved screens, checked across 211 blind-evaluated questions.</p>
+          </li>
+          <li>
+            <span>05</span>
+            <h4 data-i18n="experience.module5Title">Flutter product surfaces</h4>
+            <p data-i18n="experience.module5">Multi-conversation chat, AI-assisted onboarding, job-post drafting and content suggestions, implemented end to end and test-first.</p>
+          </li>
+        </ol>
       </div>
     </article>
   </div>
@@ -239,7 +296,7 @@
           <header class="chapter-head">
             <div>
               <span class="chapter-type" data-i18n="shopmate.type">Primary build / AI + Android</span>
-              <p class="project-role" data-i18n="shopmate.role">Full-Stack Lead Developer — 2026</p>
+              <p class="project-role" data-i18n="shopmate.role">Independent Developer — 2026</p>
             </div>
             <span class="project-number" aria-hidden="true">01</span>
           </header>
@@ -250,6 +307,28 @@
               <p class="project-lede" data-i18n="shopmate.lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
             </div>
             <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noopener noreferrer" data-i18n="actions.source">View source</a>
+          </div>
+
+          <div class="phone-strip" aria-label="ShopMate app screens">
+            <p class="phone-strip-hint" aria-hidden="true" data-i18n="shopmate.swipe">Swipe screens →</p>
+            <ol>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-home.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-home-480.webp 480w, assets/images/shopmate-home.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-home.webp" alt="ShopMate home screen with a message box and quick actions for photo search, comparison and cart (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>01</span><strong data-i18n="shopmate.screen1Title">Ask</strong><small data-i18n="shopmate.screen1">Start from a plain-language need, a photo or the cart.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-recommend.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-recommend-480.webp 480w, assets/images/shopmate-recommend.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-recommend.webp" alt="ShopMate chat recommending two Bluetooth earbuds with prices and add-to-cart buttons (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>02</span><strong data-i18n="shopmate.screen2Title">Recommend</strong><small data-i18n="shopmate.screen2">Grounded picks with a short rationale and a safe add-to-cart.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-detail.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-detail-480.webp 480w, assets/images/shopmate-detail.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-detail.webp" alt="ShopMate product detail page explaining why the earbuds are recommended (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>03</span><strong data-i18n="shopmate.screen3Title">Inspect</strong><small data-i18n="shopmate.screen3">Why it was picked, who it suits and where it fits.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-compare.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-compare-480.webp 480w, assets/images/shopmate-compare.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-compare.webp" alt="ShopMate comparison table of two earbuds across price, battery, noise cancellation and comfort (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>04</span><strong data-i18n="shopmate.screen4Title">Compare</strong><small data-i18n="shopmate.screen4">Side-by-side specs ending in a use-case recommendation.</small></p>
+              </li>
+            </ol>
           </div>
 
           <div class="shopmate-system" aria-label="ShopMate system architecture">
@@ -272,7 +351,7 @@
               <p data-i18n="shopmate.boundary">The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
             </div>
             <dl class="metric-list">
-              <div><dt>&lt;1s</dt><dd data-i18n="shopmate.metric1">First streamed token after resume</dd></div>
+              <div><dt>~60%</dt><dd data-i18n="shopmate.metric1">Lower first-token latency with SSE streaming and prompt compression</dd></div>
               <div><dt>1.000</dt><dd data-i18n="shopmate.metric2">Recall@5 on a fixed 111-query baseline</dd></div>
               <div><dt>0.989</dt><dd data-i18n="shopmate.metric3">MRR@10 on the same offline set</dd></div>
             </dl>
@@ -316,7 +395,7 @@
           </div>
 
           <footer class="chapter-footer">
-            <div class="tag-list"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
+            <div class="tag-list"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
             <div class="project-actions">
               <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="actions.live">Live product</a>
               <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noopener noreferrer" data-i18n="actions.sourceShort">Source</a>
@@ -378,7 +457,7 @@
     <div class="profile-themes">
       <article class="profile-theme reveal"><span>01</span><h3 data-i18n="profile.theme1Title">Product to production</h3><p data-i18n="profile.theme1Body">Translate a real user need into an interface, service boundary, data model, test strategy, and deployed product.</p></article>
       <article class="profile-theme reveal"><span>02</span><h3 data-i18n="profile.theme2Title">Grounded AI systems</h3><p data-i18n="profile.theme2Body">Use retrieval and controlled backend data to keep AI experiences useful, inspectable, and honest about their limits.</p></article>
-      <article class="profile-theme reveal"><span>03</span><h3 data-i18n="profile.theme3Title">Cross-platform engineering</h3><p data-i18n="profile.theme3Body">Work across web, Android, backend services, databases, and cloud delivery without losing the product thread.</p></article>
+      <article class="profile-theme reveal"><span>03</span><h3 data-i18n="profile.theme3Title">Cross-platform engineering</h3><p data-i18n="profile.theme3Body">Work across web, Flutter, Android, backend services, databases, and cloud delivery without losing the product thread.</p></article>
     </div>
   </div>
 </section>
@@ -393,11 +472,11 @@
     </div>
 
     <div class="capability-list reveal">
-      <article><span class="capability-number">01</span><h3 data-i18n="capabilities.ai">AI and RAG</h3><p data-i18n="capabilities.aiTools">LLM APIs, conversational AI, recommendations, Qdrant, RAG design and evaluation, prompt engineering, summarisation</p></article>
-      <article><span class="capability-number">02</span><h3 data-i18n="capabilities.web">Web engineering</h3><p data-i18n="capabilities.webTools">Next.js, React, TypeScript, JavaScript, Node.js, FastAPI, REST APIs, SSE</p></article>
-      <article><span class="capability-number">03</span><h3 data-i18n="capabilities.mobile">Mobile</h3><p data-i18n="capabilities.mobileTools">Kotlin, Android Native, Jetpack Compose, Java</p></article>
-      <article><span class="capability-number">04</span><h3 data-i18n="capabilities.data">Data and cloud</h3><p data-i18n="capabilities.dataTools">PostgreSQL, MongoDB, Prisma, Mongoose, Redis, AWS, Vercel, Render, Cloudflare R2, Cloudinary</p></article>
-      <article><span class="capability-number">05</span><h3 data-i18n="capabilities.product">Product engineering</h3><p data-i18n="capabilities.productTools">Data modelling, RBAC, OAuth 2.0, JWT, Stripe, rate limiting, Vitest, CI/CD, deployment</p></article>
+      <article><span class="capability-number">01</span><h3 data-i18n="capabilities.ai">AI and RAG</h3><p data-i18n="capabilities.aiTools">LLM APIs (OpenAI, Claude, Gemini, OpenRouter), LLM routing and evaluation, RAG, pgvector, Qdrant, embeddings, prompt engineering</p></article>
+      <article><span class="capability-number">02</span><h3 data-i18n="capabilities.web">Web engineering</h3><p data-i18n="capabilities.webTools">Next.js, React 19, TypeScript, Node.js, Express, Deno, FastAPI, REST APIs, SSE</p></article>
+      <article><span class="capability-number">03</span><h3 data-i18n="capabilities.mobile">Mobile and cross-platform</h3><p data-i18n="capabilities.mobileTools">Flutter, Dart, Kotlin, Jetpack Compose, Android</p></article>
+      <article><span class="capability-number">04</span><h3 data-i18n="capabilities.data">Data and cloud</h3><p data-i18n="capabilities.dataTools">PostgreSQL, Supabase (Edge Functions, RLS), MongoDB, Prisma, Upstash Redis, Trigger.dev, Docker, AWS, Vercel, Render, Cloudflare R2</p></article>
+      <article><span class="capability-number">05</span><h3 data-i18n="capabilities.product">Product engineering</h3><p data-i18n="capabilities.productTools">Test-driven development, pgTAP, Vitest, GitHub Actions CI/CD, data modelling, RBAC, OAuth 2.0, JWT, Stripe, rate limiting</p></article>
     </div>
   </div>
 </section>
@@ -411,15 +490,15 @@
     </div>
 
     <article class="education-record reveal">
-      <div class="education-date"><span>2023</span><span aria-hidden="true">—</span><span>2026</span></div>
+      <div class="education-date"><span>2024</span><span aria-hidden="true">—</span><span>2027</span></div>
       <div>
         <h3 data-i18n="education.university">University of Melbourne</h3>
         <p class="education-degree" data-i18n="education.degree">Bachelor of Science in Computer Science</p>
-        <p class="education-meta" data-i18n="education.meta">March 2023 to November 2026 · Melbourne, Australia</p>
+        <p class="education-meta" data-i18n="education.meta">March 2024 to March 2027 · Melbourne, Australia</p>
       </div>
       <div class="coursework">
         <span data-i18n="education.courseworkLabel">Selected coursework</span>
-        <p data-i18n="education.coursework">Algorithms and Data Structures, Software Modelling, Database Systems, Foundations of Artificial Intelligence, and Web Computing</p>
+        <p data-i18n="education.coursework">Algorithms and Data Structures, Software Modelling, Database Systems, Foundations of Artificial Intelligence, Network Computing, and IT Project</p>
       </div>
     </article>
   </div>
@@ -430,7 +509,7 @@
       <div class="contact-copy">
         <span class="section-kicker" data-i18n="contact.kicker">06 / Contact</span>
         <h2 data-i18n="contact.title">Let’s build useful software.</h2>
-        <p data-i18n="contact.body">I’m currently exploring software engineering opportunities in Melbourne across full-stack web, AI-enabled products, and Android development.</p>
+        <p data-i18n="contact.body">I’m currently exploring software engineering opportunities in Melbourne across AI product engineering, full-stack web and mobile development.</p>
       </div>
       <div class="contact-actions" aria-label="Contact links">
         <a class="btn btn-primary" href="mailto:lxd040715@gmail.com" data-i18n="contact.email">Start a conversation</a>
@@ -449,6 +528,6 @@
     <p data-i18n="footer.note">Built in Melbourne with HTML, CSS, and JavaScript.</p>
   </div>
 </footer>
-    <script src="assets/js/main.js?v=20260910b" defer></script>
+    <script src="assets/js/main.js?v=20261030a" defer></script>
   </body>
 </html>

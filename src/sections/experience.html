@@ -3,39 +3,98 @@
     <div class="section-head reveal">
       <div>
         <span class="section-kicker" data-i18n="experience.kicker">01 / Experience</span>
-        <h2 id="experience-title" data-i18n-html="experience.title">Building the product<br />behind the idea.</h2>
-        <p data-i18n="experience.intro">A current internship where product thinking, mobile interfaces and AI infrastructure meet.</p>
+        <h2 id="experience-title" data-i18n-html="experience.title">AI features,<br />proven by evaluation.</h2>
+        <p data-i18n="experience.intro">An internship where routing, retrieval, grounded answers and Flutter product work all had to hold up under measurement.</p>
       </div>
     </div>
 
     <article class="experience-record reveal">
       <div class="experience-identity">
-        <div class="experience-status"><span class="experience-status-dot" aria-hidden="true"></span><span data-i18n="experience.status">Current build</span></div>
-        <div class="experience-date"><span>2026</span><span aria-hidden="true">—</span><span data-i18n="experience.location">Melbourne / remote</span></div>
-        <h3 data-i18n="experience.company">Ground Zero</h3>
-        <p class="experience-role" data-i18n="experience.role">Full-stack engineering intern · Flutter / AI product</p>
-        <p class="experience-product" data-i18n="experience.product">GroundzeroApp · creative social platform</p>
-        <div class="tag-list experience-tags" aria-label="Internship technologies">
-          <span>Flutter</span><span>Dart</span><span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>AI Skills</span>
+        <div class="experience-identity-copy">
+          <div class="experience-status"><span class="experience-status-dot" aria-hidden="true"></span><span data-i18n="experience.status">Completed internship</span></div>
+          <div class="experience-date"><span>Jul — Oct 2026</span><span aria-hidden="true">·</span><span data-i18n="experience.location">Melbourne / remote</span></div>
+          <div class="experience-brand"><img src="assets/images/ftured-mark.webp" alt="" width="128" height="128" /><h3>Ft.ured</h3></div>
+          <p class="experience-role" data-i18n="experience.role">AI Full-Stack Engineering Intern · Flutter / AI product</p>
+          <p class="experience-product" data-i18n="experience.product">Social app for creatives · AI assistant</p>
+          <div class="tag-list experience-tags" aria-label="Internship technologies">
+            <span>Flutter</span><span>Dart</span><span>Deno</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>pgvector</span><span>RLS</span><span>Trigger.dev</span><span>OpenRouter</span>
+          </div>
         </div>
+        <figure class="astro-card">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="assets/images/ftured-astro-still.webp" />
+            <img src="assets/images/ftured-astro.webp" alt="Animated Astro mascot, the face of Ft.ured’s in-app AI assistant" width="216" height="216" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption><strong>Astro</strong><span data-i18n="experience.astro">In-app AI assistant</span></figcaption>
+        </figure>
       </div>
 
       <div class="experience-body">
-        <p class="experience-lede" data-i18n="experience.lede">I am contributing across Flutter/Dart product surfaces and an Astro AI backend, connecting conversation UI, content flows, user discovery and typed service boundaries into one maintainable product system.</p>
-        <div class="experience-focus-grid">
-          <div class="experience-focus">
-            <span class="experience-focus-label" data-i18n="experience.currentLabel">Current contribution</span>
-            <p data-i18n="experience.current">Conversation UI, message states, inputs and attachments, local session persistence, plus Supabase, PostgreSQL/RLS and Edge Function service boundaries.</p>
+        <p class="experience-lede" data-i18n="experience.lede">I built the AI assistant behind Ft.ured’s social app for creatives—from the Flutter chat surface to the Supabase back end that decides, retrieves and answers—and measured every part of it.</p>
+
+        <div class="route-map" aria-label="Ft.ured AI assistant routing diagram">
+          <div class="route-map-head">
+            <span data-i18n="experience.mapLabel">Decision route</span>
+            <p data-i18n="experience.mapCopy">Simplified diagram · not the client’s production interface</p>
           </div>
-          <div class="experience-focus">
-            <span class="experience-focus-label" data-i18n="experience.futureLabel">Building toward</span>
-            <p data-i18n="experience.future">Skills for onboarding guidance, content suggestions, user discovery and job generation, designed to learn from real product feedback rather than isolated demos.</p>
+          <div class="route-map-flow">
+            <div class="route-node">
+              <span data-i18n="experience.mapInput">Input</span>
+              <strong data-i18n="experience.mapMessage">User message</strong>
+            </div>
+            <div class="route-node route-node--router">
+              <span data-i18n="experience.mapRouter">Router</span>
+              <strong data-i18n="experience.mapClassifier">LLM classifier</strong>
+              <small>Supabase Edge Functions</small>
+            </div>
+            <ol class="route-branches">
+              <li data-i18n="experience.route1">Onboarding guidance</li>
+              <li data-i18n="experience.route2">People Discovery</li>
+              <li data-i18n="experience.route3">In-app Q&amp;A</li>
+              <li data-i18n="experience.route4">Job-post drafting</li>
+              <li data-i18n="experience.route5">Content suggestions</li>
+            </ol>
           </div>
-          <div class="experience-focus experience-focus--wide">
-            <span class="experience-focus-label" data-i18n="experience.feedbackLabel">Feedback loop</span>
-            <p data-i18n="experience.feedback">The next layer is a usable evaluation loop around adoption, rejection, completion, response quality, latency, cost and error rate—so AI behavior can improve with evidence.</p>
+          <div class="route-map-ledger">
+            <span data-i18n="experience.ledger1">Every decision logged: model · cost · latency</span>
+            <span data-i18n="experience.ledger2">Row-level security on user data</span>
           </div>
         </div>
+
+        <dl class="experience-metrics">
+          <div><dt>97.4%</dt><dd data-i18n="experience.metric1">Routing accuracy, up from 82.5%</dd></div>
+          <div><dt>0.97</dt><dd data-i18n="experience.metric2">Top-5 recall in People Discovery, 0.91 precision</dd></div>
+          <div><dt>96.4%</dt><dd data-i18n="experience.metric3">Blind-evaluation pass rate, zero fabricated answers</dd></div>
+          <div><dt>1,450+</dt><dd data-i18n="experience.metric4">Back-end and Flutter tests running in CI</dd></div>
+        </dl>
+
+        <ol class="experience-modules">
+          <li>
+            <span>01</span>
+            <h4 data-i18n="experience.module1Title">Decision routing</h4>
+            <p data-i18n="experience.module1">An LLM classifies each request on Supabase Edge Functions and routes it across five product capabilities, with cost and latency logged for every decision and row-level security protecting user data.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h4 data-i18n="experience.module2Title">Evaluation-gated model choice</h4>
+            <p data-i18n="experience.module2">A 241-message evaluation set compared models on routing accuracy, safety, latency and cost; every prompt-injection test passes at about 620 ms P95.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h4 data-i18n="experience.module3Title">People Discovery</h4>
+            <p data-i18n="experience.module3">Natural-language search for creatives that combines keyword and pgvector retrieval with an LLM relevance layer to filter and rank candidates—under 2.4 s P95 on 50 unseen queries, run 3 times each.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h4 data-i18n="experience.module4Title">Grounded Q&amp;A</h4>
+            <p data-i18n="experience.module4">An in-app assistant that answers only from a curated knowledge base, with navigation limited to approved screens, checked across 211 blind-evaluated questions.</p>
+          </li>
+          <li>
+            <span>05</span>
+            <h4 data-i18n="experience.module5Title">Flutter product surfaces</h4>
+            <p data-i18n="experience.module5">Multi-conversation chat, AI-assisted onboarding, job-post drafting and content suggestions, implemented end to end and test-first.</p>
+          </li>
+        </ol>
       </div>
     </article>
   </div>

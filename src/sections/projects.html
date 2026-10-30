@@ -24,7 +24,7 @@
           <header class="chapter-head">
             <div>
               <span class="chapter-type" data-i18n="shopmate.type">Primary build / AI + Android</span>
-              <p class="project-role" data-i18n="shopmate.role">Full-Stack Lead Developer — 2026</p>
+              <p class="project-role" data-i18n="shopmate.role">Independent Developer — 2026</p>
             </div>
             <span class="project-number" aria-hidden="true">01</span>
           </header>
@@ -35,6 +35,28 @@
               <p class="project-lede" data-i18n="shopmate.lede">A conversational shopping assistant that turns a natural-language need into grounded recommendations, useful comparisons, safe cart actions, and a simulated checkout flow.</p>
             </div>
             <a class="project-link project-link--primary" href="https://github.com/Sheldon715/shopmate" target="_blank" rel="noopener noreferrer" data-i18n="actions.source">View source</a>
+          </div>
+
+          <div class="phone-strip" aria-label="ShopMate app screens">
+            <p class="phone-strip-hint" aria-hidden="true" data-i18n="shopmate.swipe">Swipe screens →</p>
+            <ol>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-home.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-home-480.webp 480w, assets/images/shopmate-home.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-home.webp" alt="ShopMate home screen with a message box and quick actions for photo search, comparison and cart (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>01</span><strong data-i18n="shopmate.screen1Title">Ask</strong><small data-i18n="shopmate.screen1">Start from a plain-language need, a photo or the cart.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-recommend.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-recommend-480.webp 480w, assets/images/shopmate-recommend.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-recommend.webp" alt="ShopMate chat recommending two Bluetooth earbuds with prices and add-to-cart buttons (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>02</span><strong data-i18n="shopmate.screen2Title">Recommend</strong><small data-i18n="shopmate.screen2">Grounded picks with a short rationale and a safe add-to-cart.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-detail.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-detail-480.webp 480w, assets/images/shopmate-detail.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-detail.webp" alt="ShopMate product detail page explaining why the earbuds are recommended (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>03</span><strong data-i18n="shopmate.screen3Title">Inspect</strong><small data-i18n="shopmate.screen3">Why it was picked, who it suits and where it fits.</small></p>
+              </li>
+              <li>
+                <a class="phone-frame" href="assets/images/shopmate-compare.webp" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="assets/images/shopmate-compare-480.webp 480w, assets/images/shopmate-compare.webp 841w" sizes="(max-width: 45rem) 62vw, 240px" /><img src="assets/images/shopmate-compare.webp" alt="ShopMate comparison table of two earbuds across price, battery, noise cancellation and comfort (opens full size)" width="841" height="1760" loading="lazy" decoding="async" /></picture></a>
+                <p><span>04</span><strong data-i18n="shopmate.screen4Title">Compare</strong><small data-i18n="shopmate.screen4">Side-by-side specs ending in a use-case recommendation.</small></p>
+              </li>
+            </ol>
           </div>
 
           <div class="shopmate-system" aria-label="ShopMate system architecture">
@@ -57,7 +79,7 @@
               <p data-i18n="shopmate.boundary">The model interprets intent and explains results. Backend services remain authoritative for product facts and validate cart mutations, failing closed when a target is ambiguous.</p>
             </div>
             <dl class="metric-list">
-              <div><dt>&lt;1s</dt><dd data-i18n="shopmate.metric1">First streamed token after resume</dd></div>
+              <div><dt>~60%</dt><dd data-i18n="shopmate.metric1">Lower first-token latency with SSE streaming and prompt compression</dd></div>
               <div><dt>1.000</dt><dd data-i18n="shopmate.metric2">Recall@5 on a fixed 111-query baseline</dd></div>
               <div><dt>0.989</dt><dd data-i18n="shopmate.metric3">MRR@10 on the same offline set</dd></div>
             </dl>
@@ -101,7 +123,7 @@
           </div>
 
           <footer class="chapter-footer">
-            <div class="tag-list"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
+            <div class="tag-list"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Auth.js</span><span class="tag">Stripe</span><span class="tag">Cloudflare R2</span></div>
             <div class="project-actions">
               <a class="project-link project-link--primary" href="https://devstashapp.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="actions.live">Live product</a>
               <a class="project-link" href="https://github.com/Sheldon715/devstash" target="_blank" rel="noopener noreferrer" data-i18n="actions.sourceShort">Source</a>
