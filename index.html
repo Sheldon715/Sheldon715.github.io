@@ -42,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261030a" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261106a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -65,7 +65,7 @@
               "@type": "CollegeOrUniversity",
               "name": "University of Melbourne"
             },
-            "knowsAbout": ["Flutter", "React", "Next.js", "Kotlin", "TypeScript", "Supabase", "PostgreSQL", "pgvector", "Qdrant", "Retrieval-Augmented Generation", "LLM evaluation"]
+            "knowsAbout": ["Flutter", "React", "Next.js", "Kotlin", "TypeScript", "C#", "ASP.NET", "Azure", "Supabase", "PostgreSQL", "pgvector", "Qdrant", "Retrieval-Augmented Generation", "LLM evaluation"]
           },
           {
             "@type": "WebSite",
@@ -82,7 +82,7 @@
   </head>
   <body>
     <div class="site-frame" aria-hidden="true"></div>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to main content</a>
 <header class="nav">
   <span class="scroll-progress" aria-hidden="true"></span>
   <div class="container nav-inner">
@@ -183,7 +183,7 @@
       <div class="experience-identity">
         <div class="experience-identity-copy">
           <div class="experience-status"><span class="experience-status-dot" aria-hidden="true"></span><span data-i18n="experience.status">Completed internship</span></div>
-          <div class="experience-date"><span>Jul — Oct 2026</span><span aria-hidden="true">·</span><span data-i18n="experience.location">Melbourne / remote</span></div>
+          <div class="experience-date"><span data-i18n="experience.date">Jul — Oct 2026</span><span aria-hidden="true">·</span><span data-i18n="experience.location">Melbourne / remote</span></div>
           <div class="experience-brand"><img src="assets/images/ftured-mark.webp" alt="" width="128" height="128" /><h3>Ft.ured</h3></div>
           <p class="experience-role" data-i18n="experience.role">AI Full-Stack Engineering Intern · Flutter / AI product</p>
           <p class="experience-product" data-i18n="experience.product">Social app for creatives · AI assistant</p>
@@ -435,6 +435,13 @@
             <div><p class="compact-detail" data-i18n="taskflow.detail">React and Vite client, Express REST API, PostgreSQL persistence, JWT authentication, and Vercel delivery.</p><div class="tag-list"><span class="tag">React</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span></div></div>
             <div class="project-actions"><a class="project-link project-link--primary" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="actions.demo">Auth demo</a><a class="project-link" href="https://github.com/Sheldon715/Todo-app" target="_blank" rel="noopener noreferrer" data-i18n="actions.sourceShort">Source</a></div>
           </div>
+          <a class="chapter-image taskflow-image" href="https://todo-app-frontend-topaz-rho.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open TaskFlow auth demo">
+            <picture>
+              <source type="image/webp" srcset="assets/images/taskflow-board-640.webp 640w, assets/images/taskflow-board-960.webp 960w, assets/images/taskflow-board.webp 1280w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1280px) calc(100vw - 10rem), 1040px" />
+              <img src="assets/images/taskflow-board.webp" alt="TaskFlow board in dark mode with six personal tasks, All / Active / Completed filters and a drag-and-drop hint" width="1280" height="720" loading="lazy" decoding="async" />
+            </picture>
+            <span class="image-action" data-i18n="actions.demo">Auth demo</span>
+          </a>
         </article>
       </div>
     </div>
@@ -451,7 +458,7 @@
 
     <div class="profile-story reveal">
       <p class="profile-lede" data-i18n="profile.lede">I’m Sheldon Liu, a Computer Science student at the University of Melbourne. I like owning the full path from a product requirement to a working, testable release.</p>
-      <p data-i18n="profile.body">My work spans interface design, APIs, data modelling, retrieval, AI integration, testing, and deployment. I’m especially interested in grounded AI systems where language models help interpret and explain, while reliable application data controls facts and business actions.</p>
+      <p data-i18n="profile.body">My work spans interface design, APIs, data modelling, retrieval, AI integration, evaluation, testing, and deployment. I’m especially interested in grounded AI systems where language models help interpret and explain, while reliable application data controls facts and business actions.</p>
     </div>
 
     <div class="profile-themes">
@@ -472,11 +479,12 @@
     </div>
 
     <div class="capability-list reveal">
-      <article><span class="capability-number">01</span><h3 data-i18n="capabilities.ai">AI and RAG</h3><p data-i18n="capabilities.aiTools">LLM APIs (OpenAI, Claude, Gemini, OpenRouter), LLM routing and evaluation, RAG, pgvector, Qdrant, embeddings, prompt engineering</p></article>
-      <article><span class="capability-number">02</span><h3 data-i18n="capabilities.web">Web engineering</h3><p data-i18n="capabilities.webTools">Next.js, React 19, TypeScript, Node.js, Express, Deno, FastAPI, REST APIs, SSE</p></article>
-      <article><span class="capability-number">03</span><h3 data-i18n="capabilities.mobile">Mobile and cross-platform</h3><p data-i18n="capabilities.mobileTools">Flutter, Dart, Kotlin, Jetpack Compose, Android</p></article>
-      <article><span class="capability-number">04</span><h3 data-i18n="capabilities.data">Data and cloud</h3><p data-i18n="capabilities.dataTools">PostgreSQL, Supabase (Edge Functions, RLS), MongoDB, Prisma, Upstash Redis, Trigger.dev, Docker, AWS, Vercel, Render, Cloudflare R2</p></article>
-      <article><span class="capability-number">05</span><h3 data-i18n="capabilities.product">Product engineering</h3><p data-i18n="capabilities.productTools">Test-driven development, pgTAP, Vitest, GitHub Actions CI/CD, data modelling, RBAC, OAuth 2.0, JWT, Stripe, rate limiting</p></article>
+      <article><span class="capability-number">01</span><h3 data-i18n="capabilities.ai">AI and RAG</h3><p data-i18n="capabilities.aiTools">LLM APIs (OpenAI, Claude, Gemini, OpenRouter), LLM routing and evaluation, RAG, pgvector, Qdrant, embeddings, Hugging Face, prompt engineering</p></article>
+      <article><span class="capability-number">02</span><h3 data-i18n="capabilities.languages">Languages</h3><p data-i18n="capabilities.languagesTools">TypeScript, Python, Dart, Kotlin, JavaScript, SQL, Java, C#, C</p></article>
+      <article><span class="capability-number">03</span><h3 data-i18n="capabilities.web">Web engineering</h3><p data-i18n="capabilities.webTools">Next.js, React 19, HTML, CSS, Tailwind CSS, Node.js, Express, FastAPI, ASP.NET, Deno, REST APIs, SSE</p></article>
+      <article><span class="capability-number">04</span><h3 data-i18n="capabilities.mobile">Mobile and cross-platform</h3><p data-i18n="capabilities.mobileTools">Flutter, Android (Jetpack Compose)</p></article>
+      <article><span class="capability-number">05</span><h3 data-i18n="capabilities.data">Data and cloud</h3><p data-i18n="capabilities.dataTools">PostgreSQL, Supabase (Edge Functions, RLS), MongoDB, Prisma, Upstash Redis, Trigger.dev, Docker, Azure, AWS, Vercel, Render, Cloudflare R2</p></article>
+      <article><span class="capability-number">06</span><h3 data-i18n="capabilities.product">Product engineering</h3><p data-i18n="capabilities.productTools">Test-driven development, unit and integration testing, pgTAP, Vitest, GitHub Actions CI/CD, data modelling, RBAC, OAuth 2.0, JWT, Stripe, rate limiting</p></article>
     </div>
   </div>
 </section>
@@ -528,6 +536,6 @@
     <p data-i18n="footer.note">Built in Melbourne with HTML, CSS, and JavaScript.</p>
   </div>
 </footer>
-    <script src="assets/js/main.js?v=20261030a" defer></script>
+    <script src="assets/js/main.js?v=20261106a" defer></script>
   </body>
 </html>

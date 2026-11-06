@@ -374,6 +374,7 @@ h1 {
 }
 
 .hero-line > span { display: block; }
+.hero-line:has(> span:empty) { display: none; }
 
 .js .hero-line > span {
   opacity: 0;
@@ -1166,6 +1167,17 @@ section:not(.hero) {
   font-size: clamp(2.1rem, 4.5vw, 4rem);
 }
 
+.taskflow-image {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  aspect-ratio: 16 / 9;
+}
+
+.taskflow-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .compact-detail {
   color: var(--muted);
   font-size: 0.9rem;
@@ -1817,6 +1829,22 @@ html.is-theme-changing *::after {
 
 @keyframes pathNodeIn {
   to { opacity: 1; transform: translateY(0); }
+}
+
+:root[lang="zh-CN"] h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+@media (max-width: 45rem) {
+  :root[lang="zh-CN"] h1 { font-size: clamp(2.4rem, 13vw, 3.6rem); }
+}
+
+:root[lang="zh-CN"] .section-head h2,
+:root[lang="zh-CN"] .contact-copy h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 @media (hover: hover) {
